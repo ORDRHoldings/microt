@@ -89,9 +89,9 @@ export default function AboutSection() {
                 className="relative w-full h-full rounded-lg overflow-hidden border border-gold/20"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&q=80&w=800"
+                  src="/images/custom/artist.jpg"
                   alt="Lead artist at Velvet Brow Studio"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
                 {/* Subtle grounding gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
