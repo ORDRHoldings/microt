@@ -59,10 +59,10 @@ function DetailModal({
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-dark-lighter">
           <div>
-            <h2 className="font-heading text-xl text-white">
+            <h2 className="font-heading text-xl text-ink">
               {submission.clientName}
             </h2>
-            <p className="text-gray-500 text-xs mt-0.5">
+            <p className="text-ink-soft text-xs mt-0.5">
               ID: {submission.id}
             </p>
           </div>
@@ -75,7 +75,7 @@ function DetailModal({
             </button>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-ink-soft hover:text-ink transition-colors"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -104,10 +104,10 @@ function DetailModal({
                 ],
               ].map(([label, value]) => (
                 <div key={label}>
-                  <p className="text-gray-500 text-xs uppercase tracking-wider mb-0.5">
+                  <p className="text-ink-soft text-xs uppercase tracking-wider mb-0.5">
                     {label}
                   </p>
-                  <p className="text-white">{value || "—"}</p>
+                  <p className="text-ink">{value || "—"}</p>
                 </div>
               ))}
             </div>
@@ -133,10 +133,10 @@ function DetailModal({
               </div>
             )}
             <div className="mt-3 text-sm">
-              <span className="text-gray-500 text-xs uppercase tracking-wider">
+              <span className="text-ink-soft text-xs uppercase tracking-wider">
                 Last vaccination:{" "}
               </span>
-              <span className="text-white">
+              <span className="text-ink">
                 {submission.vaccinationTimeframe || "—"}
               </span>
             </div>
@@ -147,7 +147,7 @@ function DetailModal({
             <h3 className="text-gold text-xs uppercase tracking-widest font-semibold mb-3">
               Consents
             </h3>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-ink-soft">
               All 12 consent items acknowledged:{" "}
               <span
                 className={
@@ -170,13 +170,13 @@ function DetailModal({
             <h3 className="text-gold text-xs uppercase tracking-widest font-semibold mb-3">
               Signature
             </h3>
-            <p className="text-sm text-gray-400 mb-2">
+            <p className="text-sm text-ink-soft mb-2">
               Signed as:{" "}
-              <span className="text-white font-medium">
+              <span className="text-ink font-medium">
                 {submission.signatureFullName}
               </span>{" "}
               on{" "}
-              <span className="text-white">
+              <span className="text-ink">
                 {submission.signatureDate}
               </span>
             </p>
@@ -228,8 +228,8 @@ export default function ConsentFormsPage() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="font-heading text-2xl text-white">Consent Forms</h1>
-            <p className="text-gray-500 text-sm mt-1">
+            <h1 className="font-heading text-2xl text-ink">Consent Forms</h1>
+            <p className="text-ink-soft text-sm mt-1">
               {submissions.length} submission
               {submissions.length !== 1 ? "s" : ""}
             </p>
@@ -262,10 +262,10 @@ export default function ConsentFormsPage() {
             )}
           </div>
           <div className="flex-1 text-center sm:text-left">
-            <h3 className="font-heading text-lg text-white mb-1">
+            <h3 className="font-heading text-lg text-ink mb-1">
               Client Consent Form
             </h3>
-            <p className="text-gray-400 text-sm mb-2">
+            <p className="text-ink-soft text-sm mb-2">
               Scan here to complete your consultation and consent form before
               treatment.
             </p>
@@ -275,13 +275,13 @@ export default function ConsentFormsPage() {
 
         {/* Table */}
         {loading ? (
-          <div className="py-20 text-center text-gray-500">
+          <div className="py-20 text-center text-ink-soft">
             Loading submissions…
           </div>
         ) : submissions.length === 0 ? (
           <div className="bg-dark-light border border-dark-lighter rounded-xl p-12 text-center">
-            <p className="text-gray-400 mb-2">No consent forms submitted yet.</p>
-            <p className="text-gray-600 text-sm">
+            <p className="text-ink-soft mb-2">No consent forms submitted yet.</p>
+            <p className="text-ink-soft text-sm">
               Forms will appear here once clients complete them.
             </p>
           </div>
@@ -290,20 +290,20 @@ export default function ConsentFormsPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-dark-lighter">
-                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-gray-500 font-medium">
+                  <tr className="bg-aqua border-b border-line">
+                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-ink font-medium">
                       Client
                     </th>
-                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-gray-500 font-medium hidden sm:table-cell">
+                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-ink-soft font-medium hidden sm:table-cell">
                       Treatment
                     </th>
-                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-gray-500 font-medium hidden md:table-cell">
+                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-ink-soft font-medium hidden md:table-cell">
                       Appt. Date
                     </th>
-                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-gray-500 font-medium">
+                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-ink-soft font-medium">
                       Submitted
                     </th>
-                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-gray-500 font-medium hidden lg:table-cell">
+                    <th className="text-left px-6 py-4 text-xs uppercase tracking-wider text-ink-soft font-medium hidden lg:table-cell">
                       Health Flags
                     </th>
                     <th className="px-6 py-4" />
@@ -318,20 +318,20 @@ export default function ConsentFormsPage() {
                     return (
                       <tr
                         key={s.id}
-                        className="border-b border-dark-lighter/50 last:border-0 hover:bg-white/[0.02] transition-colors cursor-pointer"
+                        className="border-b border-dark-lighter/50 last:border-0 hover:bg-ink/[0.02] transition-colors cursor-pointer"
                         onClick={() => setSelected(s)}
                       >
                         <td className="px-6 py-4">
-                          <p className="text-white font-medium">{s.clientName}</p>
-                          <p className="text-gray-500 text-xs">{s.email}</p>
+                          <p className="text-ink font-medium">{s.clientName}</p>
+                          <p className="text-ink-soft text-xs">{s.email}</p>
                         </td>
-                        <td className="px-6 py-4 text-gray-400 hidden sm:table-cell">
+                        <td className="px-6 py-4 text-ink-soft hidden sm:table-cell">
                           {s.treatmentType}
                         </td>
-                        <td className="px-6 py-4 text-gray-400 hidden md:table-cell">
+                        <td className="px-6 py-4 text-ink-soft hidden md:table-cell">
                           {s.appointmentDate || "—"}
                         </td>
-                        <td className="px-6 py-4 text-gray-400">
+                        <td className="px-6 py-4 text-ink-soft">
                           {format(new Date(s.submittedAt), "MMM d, yyyy")}
                         </td>
                         <td className="px-6 py-4 hidden lg:table-cell">

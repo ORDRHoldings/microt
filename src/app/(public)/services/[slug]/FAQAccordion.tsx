@@ -22,7 +22,7 @@ function FAQAccordionItem({ question, answer }: FAQItem) {
         className="w-full flex items-center justify-between py-5 px-1 text-left group"
         aria-expanded={isOpen}
       >
-        <span className="text-white font-medium text-base md:text-lg pr-4 group-hover:text-gold transition-colors duration-300">
+        <span className="text-ink font-medium text-base md:text-lg pr-4 group-hover:text-gold transition-colors duration-300">
           {question}
         </span>
         <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
@@ -49,7 +49,7 @@ function FAQAccordionItem({ question, answer }: FAQItem) {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-5 px-1 text-gray-400 leading-relaxed">
+            <p className="pb-5 px-1 text-ink-soft leading-relaxed">
               {answer}
             </p>
           </motion.div>

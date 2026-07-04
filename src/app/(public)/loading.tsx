@@ -7,7 +7,7 @@ export default function PublicLoading() {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.1) 50%, transparent 75%)",
+              "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.1) 50%, transparent 75%)",
             backgroundSize: "200% 100%",
             animation: "shimmer 2.5s ease-in-out infinite",
           }}
@@ -17,7 +17,7 @@ export default function PublicLoading() {
             className="h-10 w-80 max-w-full rounded bg-dark-lighter/60"
             style={{
               backgroundImage:
-                "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.15) 50%, transparent 75%)",
+                "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.15) 50%, transparent 75%)",
               backgroundSize: "200% 100%",
               animation: "shimmer 2.5s ease-in-out infinite",
             }}
@@ -26,7 +26,7 @@ export default function PublicLoading() {
             className="h-4 w-64 max-w-full rounded bg-dark-lighter/60"
             style={{
               backgroundImage:
-                "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.15) 50%, transparent 75%)",
+                "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.15) 50%, transparent 75%)",
               backgroundSize: "200% 100%",
               animation: "shimmer 2.5s ease-in-out infinite",
               animationDelay: "0.15s",
@@ -43,7 +43,7 @@ export default function PublicLoading() {
             className="h-7 w-56 rounded bg-dark-lighter"
             style={{
               backgroundImage:
-                "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.15) 50%, transparent 75%)",
+                "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.15) 50%, transparent 75%)",
               backgroundSize: "200% 100%",
               animation: "shimmer 2.5s ease-in-out infinite",
               animationDelay: "0.2s",
@@ -70,7 +70,7 @@ export default function PublicLoading() {
             style={{
               width: bar.w,
               backgroundImage:
-                "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.12) 50%, transparent 75%)",
+                "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.12) 50%, transparent 75%)",
               backgroundSize: "200% 100%",
               animation: "shimmer 2.5s ease-in-out infinite, pulse 2s ease-in-out infinite",
               animationDelay: bar.delay,
@@ -86,7 +86,7 @@ export default function PublicLoading() {
                 className="h-48 rounded-lg bg-dark-lighter"
                 style={{
                   backgroundImage:
-                    "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.1) 50%, transparent 75%)",
+                    "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.1) 50%, transparent 75%)",
                   backgroundSize: "200% 100%",
                   animation: "shimmer 2.5s ease-in-out infinite",
                   animationDelay: `${0.9 + i * 0.15}s`,

@@ -1,5 +1,19 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * LIGHT THEME ("Clean clinical-luxe")
+ *
+ * The site was originally a dark/gold theme. To flip it to a white + ink + aqua
+ * palette without hand-editing hundreds of utility classes across 57 files, the
+ * legacy token NAMES are kept but their VALUES are remapped to light-theme
+ * colors. So existing classes now render light automatically:
+ *   - `bg-dark`      -> white / soft surfaces
+ *   - `text-gold`    -> deep aqua (interactive accent)
+ *   - `bg-gold-gradient`, `shadow-glow`, etc. -> aqua equivalents
+ *
+ * New semantic tokens (paper / ink / aqua / mist / line) are added for any
+ * component touched directly. Accent color anchor: #ADDAE0 (client-provided).
+ */
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,36 +23,61 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: {
-          DEFAULT: "#C9A96E",
-          light: "#D4AF37",
-          dark: "#B8943F",
+        // --- New semantic light-theme tokens ---
+        paper: "#FFFFFF",
+        mist: "#F5FAFB",
+        cloud: "#FBFDFD",
+        ink: {
+          DEFAULT: "#12181A",
+          soft: "#4A575B",
+          faint: "#7C888C",
         },
-        champagne: "#C9A96E",
-        beige: "#F5F0E8",
+        aqua: {
+          DEFAULT: "#ADDAE0", // client-provided accent
+          soft: "#DCEFF2",
+          mid: "#7FBFCB",
+          deep: "#1F6475", // interactive (white text = 6.7:1)
+          deeper: "#164E5C",
+        },
+        line: {
+          DEFAULT: "#E4EAEC",
+          strong: "#CBD9DC",
+        },
+
+        // --- Legacy tokens remapped to LIGHT values (names unchanged) ---
+        gold: {
+          DEFAULT: "#1F6475", // was #C9A96E -> now deep aqua accent
+          light: "#2F8296",
+          dark: "#164E5C",
+        },
+        champagne: "#1F6475",
+        beige: "#EFF6F7",
         dark: {
-          DEFAULT: "#0A0A0A",
-          light: "#1A1A1A",
-          lighter: "#2A2A2A",
+          DEFAULT: "#FFFFFF", // was #0A0A0A -> now page surface
+          light: "#F5FAFB",
+          lighter: "#ECF4F6",
         },
       },
       fontFamily: {
-        heading: ["var(--font-heading)", "Cormorant Garamond", "Georgia", "serif"],
-        body: ["var(--font-body)", "Raleway", "Helvetica Neue", "sans-serif"],
+        heading: ["var(--font-heading)", "Fraunces", "Georgia", "serif"],
+        body: ["var(--font-body)", "Jost", "Helvetica Neue", "sans-serif"],
       },
       backgroundImage: {
         "gold-gradient":
-          "linear-gradient(135deg, #C9A96E 0%, #D4AF37 50%, #C9A96E 100%)",
+          "linear-gradient(135deg, #1F6475 0%, #2F8296 50%, #1F6475 100%)",
         "gold-gradient-horizontal":
-          "linear-gradient(90deg, #C9A96E 0%, #D4AF37 50%, #C9A96E 100%)",
+          "linear-gradient(90deg, #1F6475 0%, #2F8296 50%, #1F6475 100%)",
         "gold-shimmer":
-          "linear-gradient(110deg, transparent 25%, rgba(212,175,55,0.15) 50%, transparent 75%)",
+          "linear-gradient(110deg, transparent 25%, rgba(31,100,117,0.10) 50%, transparent 75%)",
+        "aqua-band":
+          "linear-gradient(135deg, #ADDAE0 0%, #DCEFF2 100%)",
       },
       boxShadow: {
-        glow: "0 0 20px rgba(201, 169, 110, 0.3)",
-        "glow-lg": "0 0 40px rgba(201, 169, 110, 0.4)",
-        "glow-sm": "0 0 10px rgba(201, 169, 110, 0.2)",
-        gold: "0 4px 20px rgba(201, 169, 110, 0.25)",
+        glow: "0 4px 24px rgba(31, 100, 117, 0.10)",
+        "glow-lg": "0 12px 40px rgba(31, 100, 117, 0.14)",
+        "glow-sm": "0 2px 10px rgba(31, 100, 117, 0.08)",
+        gold: "0 6px 24px rgba(31, 100, 117, 0.12)",
+        soft: "0 1px 2px rgba(16, 24, 26, 0.04), 0 10px 30px rgba(16, 24, 26, 0.06)",
       },
       keyframes: {
         shimmer: {

@@ -102,7 +102,7 @@ export default function NewsletterModal() {
           <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gold-gradient flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 text-black"
+              className="w-8 h-8 text-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -111,10 +111,10 @@ export default function NewsletterModal() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="font-playfair text-2xl font-bold text-white mb-2">
+          <h3 className="font-heading text-2xl font-bold text-ink mb-2">
             Welcome to the VIP List!
           </h3>
-          <p className="text-gray-400">
+          <p className="text-ink-soft">
             You&apos;ll be the first to know about exclusive offers and beauty tips.
           </p>
         </div>
@@ -136,10 +136,10 @@ export default function NewsletterModal() {
               />
             </svg>
           </div>
-          <h3 className="font-playfair text-2xl md:text-3xl font-bold text-white mb-2">
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-ink mb-2">
             Join Our VIP List
           </h3>
-          <p className="text-gray-400 mb-8">
+          <p className="text-ink-soft mb-8">
             Get exclusive offers and beauty tips delivered straight to your inbox.
           </p>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -152,7 +152,7 @@ export default function NewsletterModal() {
               className="
                 w-full px-4 py-3 rounded
                 bg-dark border border-dark-lighter
-                text-white placeholder-gray-500
+                text-ink placeholder-ink-faint
                 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/30
                 transition-colors duration-300
               "
@@ -166,7 +166,7 @@ export default function NewsletterModal() {
               className="
                 w-full relative inline-flex items-center justify-center
                 bg-gold-gradient px-8 py-3
-                text-black font-semibold uppercase tracking-widest text-sm
+                text-white font-semibold uppercase tracking-widest text-sm
                 rounded overflow-hidden
                 transition-shadow duration-300
                 hover:shadow-glow
@@ -182,7 +182,7 @@ export default function NewsletterModal() {
               </span>
             </button>
           </form>
-          <p className="text-gray-600 text-xs mt-4">
+          <p className="text-ink-soft text-xs mt-4">
             We respect your privacy. Unsubscribe at any time.
           </p>
         </div>

@@ -118,19 +118,19 @@ export default function GalleryPage() {
     <div className="space-y-6">
       {/* Upload section */}
       <Card padding="md">
-        <h3 className="text-lg font-heading text-white mb-4">Upload Image</h3>
+        <h3 className="text-lg font-heading text-ink mb-4">Upload Image</h3>
         <form onSubmit={handleUpload} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* File input */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-ink-soft mb-2">
                 Image File
               </label>
               <input
                 type="file"
                 accept="image/jpeg,image/png,image/webp,image/avif"
                 onChange={(e) => setFile(e.target.files?.[0] || null)}
-                className="w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-gold/10 file:text-gold hover:file:bg-gold/20 file:cursor-pointer file:transition-colors file:duration-200"
+                className="w-full text-sm text-ink-soft file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-gold/10 file:text-gold hover:file:bg-gold/20 file:cursor-pointer file:transition-colors file:duration-200"
               />
             </div>
 
@@ -149,13 +149,13 @@ export default function GalleryPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Service category */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-ink-soft mb-2">
                 Service Category
               </label>
               <select
                 value={serviceSlug}
                 onChange={(e) => setServiceSlug(e.target.value)}
-                className="w-full bg-dark-light border border-dark-lighter rounded px-4 py-3 text-white text-sm font-body focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all duration-300"
+                className="w-full bg-dark-light border border-dark-lighter rounded px-4 py-3 text-ink text-sm font-body focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all duration-300"
               >
                 <option value="">Select a service</option>
                 {SERVICE_OPTIONS.map((opt) => (
@@ -168,7 +168,7 @@ export default function GalleryPage() {
 
             {/* Type toggle */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-ink-soft mb-2">
                 Type
               </label>
               <div className="flex gap-2">
@@ -179,8 +179,8 @@ export default function GalleryPage() {
                     flex-1 px-4 py-3 text-sm rounded font-body transition-all duration-200
                     ${
                       imageType === "portfolio"
-                        ? "bg-gold text-black"
-                        : "bg-dark border border-dark-lighter text-gray-400 hover:text-white"
+                        ? "bg-gold text-white"
+                        : "bg-dark border border-dark-lighter text-ink-soft hover:text-ink"
                     }
                   `}
                 >
@@ -193,8 +193,8 @@ export default function GalleryPage() {
                     flex-1 px-4 py-3 text-sm rounded font-body transition-all duration-200
                     ${
                       imageType === "before-after"
-                        ? "bg-gold text-black"
-                        : "bg-dark border border-dark-lighter text-gray-400 hover:text-white"
+                        ? "bg-gold text-white"
+                        : "bg-dark border border-dark-lighter text-ink-soft hover:text-ink"
                     }
                   `}
                 >
@@ -220,7 +220,7 @@ export default function GalleryPage() {
 
       {/* Gallery grid */}
       <div>
-        <h3 className="text-lg font-heading text-white mb-4">
+        <h3 className="text-lg font-heading text-ink mb-4">
           Gallery Images
         </h3>
 
@@ -230,7 +230,7 @@ export default function GalleryPage() {
           </div>
         ) : images.length === 0 ? (
           <Card padding="lg">
-            <p className="text-center text-gray-500 font-body">
+            <p className="text-center text-ink-soft font-body">
               No images uploaded yet.
             </p>
           </Card>
@@ -252,10 +252,10 @@ export default function GalleryPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-sm font-medium text-white truncate">
+                    <p className="text-sm font-medium text-ink truncate">
                       {img.title}
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-ink-soft">
                       {serviceLabel} &middot;{" "}
                       {img.type === "before-after"
                         ? "Before/After"

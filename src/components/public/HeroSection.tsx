@@ -91,7 +91,7 @@ function GoldParticles() {
             height: p.size,
             left: `${p.left}%`,
             top: `${p.top}%`,
-            background: 'radial-gradient(circle, rgba(201,169,110,0.6) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(127,191,203,0.55) 0%, transparent 70%)',
           }}
           animate={{
             y: [-10, -30, -10],
@@ -133,39 +133,31 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden noise-overlay"
       onMouseMove={handleMouseMove}
     >
-      {/* Stunning high-quality beauty background image */}
+      {/* Soft beauty background image, faded into the light page */}
       <motion.div
         className="absolute inset-0"
         style={{ x: bgX, y: bgY }}
       >
         <div className="absolute inset-[-5%]">
-          {/* Using a high-quality beauty portrait from Unsplash as the hero image */}
           <Image
             src="/images/custom/hero.png"
             alt="Luxury Beauty Studio"
             fill
-            className="object-cover object-top opacity-60"
+            className="object-cover object-top opacity-35"
             priority
           />
         </div>
       </motion.div>
 
-      {/* Background gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,169,110,0.08)_0%,_rgba(10,10,10,1)_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.05)_0%,_transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(201,169,110,0.04)_0%,_transparent_50%)]" />
+      {/* Light wash so the image reads as a soft backdrop */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/85 to-white" />
 
-      {/* Animated gradient overlay */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: 'linear-gradient(45deg, rgba(201,169,110,0.05), rgba(10,10,10,0), rgba(212,175,55,0.05), rgba(10,10,10,0))',
-          backgroundSize: '400% 400%',
-          animation: 'gradientShift 15s ease infinite',
-        }}
-      />
+      {/* Soft aqua glow accents */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(173,218,224,0.28)_0%,_rgba(255,255,255,0)_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(173,218,224,0.20)_0%,_transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(127,191,203,0.12)_0%,_transparent_50%)]" />
 
-      {/* Floating gold particles */}
+      {/* Floating aqua particles */}
       <GoldParticles />
 
       {/* Decorative line */}
@@ -196,13 +188,10 @@ export default function HeroSection() {
           variants={fadeUpSpring}
           className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
         >
-          <span className="block">
-            <AnimatedText
-              text="Velvet Brow"
-              className="text-shimmer"
-            />
+          <span className="block text-ink">
+            <AnimatedText text="Velvet Brow" />
           </span>
-          <span className="block text-white">
+          <span className="block italic text-gold">
             <AnimatedText text="Studio" />
           </span>
         </motion.h1>
@@ -210,7 +199,7 @@ export default function HeroSection() {
         {/* Tagline */}
         <motion.p
           variants={fadeUpSpring}
-          className="text-gray-300 text-lg md:text-xl lg:text-2xl font-light mb-10 tracking-wide"
+          className="text-ink-soft text-lg md:text-xl lg:text-2xl font-light mb-10 tracking-wide"
         >
           Where Precision Meets Beauty
         </motion.p>
@@ -236,7 +225,7 @@ export default function HeroSection() {
           ].map((badge) => (
             <div
               key={badge.label}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-sm border border-gold/20 text-gray-300"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-aqua shadow-sm text-ink-soft"
             >
               <svg
                 className="w-4 h-4 text-gold"
@@ -264,7 +253,7 @@ export default function HeroSection() {
         transition={{ delay: 2.5, duration: 1, type: 'spring', stiffness: 100 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-gray-500 text-xs uppercase tracking-widest">
+        <span className="text-ink-soft text-xs uppercase tracking-widest">
           Scroll
         </span>
         <motion.div

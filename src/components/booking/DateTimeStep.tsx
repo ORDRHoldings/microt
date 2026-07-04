@@ -103,10 +103,10 @@ export default function DateTimeStep({
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4">
-      <h2 className="font-heading text-3xl text-white text-center mb-2">
+      <h2 className="font-heading text-3xl text-ink text-center mb-2">
         Pick a Date & Time
       </h2>
-      <p className="text-gray-400 text-center mb-8">
+      <p className="text-ink-soft text-center mb-8">
         Select your preferred appointment slot
       </p>
 
@@ -117,7 +117,7 @@ export default function DateTimeStep({
           <div className="flex items-center justify-between mb-4">
             <button
               onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}
-              className="text-gray-400 hover:text-gold transition-colors p-1"
+              className="text-ink-soft hover:text-gold transition-colors p-1"
               aria-label="Previous month"
             >
               <svg
@@ -134,12 +134,12 @@ export default function DateTimeStep({
                 />
               </svg>
             </button>
-            <h3 className="font-heading text-lg text-white">
+            <h3 className="font-heading text-lg text-ink">
               {format(currentMonth, "MMMM yyyy")}
             </h3>
             <button
               onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
-              className="text-gray-400 hover:text-gold transition-colors p-1"
+              className="text-ink-soft hover:text-gold transition-colors p-1"
               aria-label="Next month"
             >
               <svg
@@ -163,7 +163,7 @@ export default function DateTimeStep({
             {dayLabels.map((d) => (
               <div
                 key={d}
-                className="text-center text-xs text-gray-500 font-medium py-1"
+                className="text-center text-xs text-ink-soft font-medium py-1"
               >
                 {d}
               </div>
@@ -191,17 +191,17 @@ export default function DateTimeStep({
                       ${!inMonth ? "text-gray-700 cursor-default" : ""}
                       ${
                         inMonth && disabled
-                          ? "text-gray-600 cursor-not-allowed"
+                          ? "text-ink-soft cursor-not-allowed"
                           : ""
                       }
                       ${
                         inMonth && !disabled && !isSelected
-                          ? "text-gray-300 hover:bg-dark-lighter hover:text-white cursor-pointer"
+                          ? "text-ink-soft hover:bg-dark-lighter hover:text-ink cursor-pointer"
                           : ""
                       }
                       ${
                         isSelected
-                          ? "bg-gold text-black font-semibold shadow-glow-sm"
+                          ? "bg-gold text-white font-semibold shadow-glow-sm"
                           : ""
                       }
                       ${
@@ -221,14 +221,14 @@ export default function DateTimeStep({
 
         {/* Time slots */}
         <div className="bg-dark-light border border-dark-lighter rounded-lg p-5">
-          <h3 className="font-heading text-lg text-white mb-4">
+          <h3 className="font-heading text-lg text-ink mb-4">
             {selectedDate
               ? `Available Times — ${format(new Date(selectedDate + "T00:00:00"), "MMM d, yyyy")}`
               : "Select a date first"}
           </h3>
 
           {!selectedDate ? (
-            <div className="flex items-center justify-center h-48 text-gray-500">
+            <div className="flex items-center justify-center h-48 text-ink-soft">
               <p>Please choose a date from the calendar</p>
             </div>
           ) : loadingSlots ? (
@@ -251,10 +251,10 @@ export default function DateTimeStep({
                       transition-all duration-200
                       ${
                         isBooked
-                          ? "bg-dark-lighter text-gray-600 cursor-not-allowed line-through"
+                          ? "bg-dark-lighter text-ink-soft cursor-not-allowed line-through"
                           : isSelected
-                          ? "bg-gold text-black shadow-glow-sm"
-                          : "bg-dark-lighter text-gray-300 hover:border-gold/30 hover:text-gold border border-transparent hover:border-gold/30"
+                          ? "bg-gold text-white shadow-glow-sm"
+                          : "bg-dark-lighter text-ink-soft hover:border-gold/30 hover:text-gold border border-transparent hover:border-gold/30"
                       }
                     `}
                   >

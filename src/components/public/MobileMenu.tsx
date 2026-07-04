@@ -60,7 +60,7 @@ export default function MobileMenu({ isOpen, onClose, socialLinks }: MobileMenuP
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 text-gray-400 hover:text-white transition-colors"
+              className="absolute top-5 right-5 text-ink-soft hover:text-ink transition-colors"
               aria-label="Close menu"
             >
               <svg
@@ -88,7 +88,7 @@ export default function MobileMenu({ isOpen, onClose, socialLinks }: MobileMenuP
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + index * 0.07, duration: 0.4 }}
                   onClick={() => handleLinkClick(link.href)}
-                  className="text-left font-heading text-2xl text-white hover:text-gold transition-colors duration-300"
+                  className="text-left font-heading text-2xl text-ink hover:text-gold transition-colors duration-300"
                 >
                   {link.label}
                 </motion.button>
@@ -101,7 +101,7 @@ export default function MobileMenu({ isOpen, onClose, socialLinks }: MobileMenuP
                   duration: 0.4,
                 }}
                 href="/book"
-                className="inline-block mt-4 px-8 py-4 bg-gold-gradient text-black font-semibold uppercase tracking-widest text-sm rounded text-center hover:shadow-glow transition-shadow duration-300"
+                className="inline-block mt-4 px-8 py-4 bg-gold-gradient text-white font-semibold uppercase tracking-widest text-sm rounded text-center hover:shadow-glow transition-shadow duration-300"
               >
                 Book Now
               </motion.a>
@@ -113,7 +113,7 @@ export default function MobileMenu({ isOpen, onClose, socialLinks }: MobileMenuP
                 href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gold transition-colors"
+                className="text-ink-soft hover:text-gold transition-colors"
                 aria-label="Instagram"
               >
                 <InstagramIcon />
@@ -122,7 +122,7 @@ export default function MobileMenu({ isOpen, onClose, socialLinks }: MobileMenuP
                 href={socialLinks.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gold transition-colors"
+                className="text-ink-soft hover:text-gold transition-colors"
                 aria-label="TikTok"
               >
                 <TikTokIcon />
@@ -131,7 +131,7 @@ export default function MobileMenu({ isOpen, onClose, socialLinks }: MobileMenuP
                 href={socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gold transition-colors"
+                className="text-ink-soft hover:text-gold transition-colors"
                 aria-label="Facebook"
               >
                 <FacebookIcon />

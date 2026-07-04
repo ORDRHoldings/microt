@@ -54,7 +54,7 @@ export default function ListEditor({ items, fields, onChange }: ListEditorProps)
           className="bg-dark border border-dark-lighter rounded-lg p-4 space-y-3"
         >
           <div className="flex items-center justify-between mb-1">
-            <span className="text-xs text-gray-500 font-medium uppercase tracking-wider">
+            <span className="text-xs text-ink-soft font-medium uppercase tracking-wider">
               #{index + 1}
             </span>
             <div className="flex items-center gap-1">
@@ -62,7 +62,7 @@ export default function ListEditor({ items, fields, onChange }: ListEditorProps)
                 type="button"
                 onClick={() => moveUp(index)}
                 disabled={index === 0}
-                className="p-1 text-gray-500 hover:text-white disabled:opacity-30 transition-colors"
+                className="p-1 text-ink-soft hover:text-ink disabled:opacity-30 transition-colors"
                 title="Move up"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -73,7 +73,7 @@ export default function ListEditor({ items, fields, onChange }: ListEditorProps)
                 type="button"
                 onClick={() => moveDown(index)}
                 disabled={index === items.length - 1}
-                className="p-1 text-gray-500 hover:text-white disabled:opacity-30 transition-colors"
+                className="p-1 text-ink-soft hover:text-ink disabled:opacity-30 transition-colors"
                 title="Move down"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -83,7 +83,7 @@ export default function ListEditor({ items, fields, onChange }: ListEditorProps)
               <button
                 type="button"
                 onClick={() => removeItem(index)}
-                className="p-1 text-gray-500 hover:text-red-400 transition-colors ml-1"
+                className="p-1 text-ink-soft hover:text-red-400 transition-colors ml-1"
                 title="Remove"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -95,26 +95,26 @@ export default function ListEditor({ items, fields, onChange }: ListEditorProps)
           {fields.map((field) =>
             field.multiline ? (
               <div key={field.key}>
-                <label className="block text-xs text-gray-400 mb-1">
+                <label className="block text-xs text-ink-soft mb-1">
                   {field.label}
                 </label>
                 <textarea
                   rows={3}
                   value={item[field.key] ?? ""}
                   onChange={(e) => updateField(index, field.key, e.target.value)}
-                  className="w-full bg-dark-light border border-dark-lighter rounded px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-gold/50 resize-y"
+                  className="w-full bg-dark-light border border-dark-lighter rounded px-3 py-2 text-sm text-ink placeholder-ink-faint focus:outline-none focus:border-gold/50 resize-y"
                 />
               </div>
             ) : (
               <div key={field.key}>
-                <label className="block text-xs text-gray-400 mb-1">
+                <label className="block text-xs text-ink-soft mb-1">
                   {field.label}
                 </label>
                 <input
                   type="text"
                   value={item[field.key] ?? ""}
                   onChange={(e) => updateField(index, field.key, e.target.value)}
-                  className="w-full bg-dark-light border border-dark-lighter rounded px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-gold/50"
+                  className="w-full bg-dark-light border border-dark-lighter rounded px-3 py-2 text-sm text-ink placeholder-ink-faint focus:outline-none focus:border-gold/50"
                 />
               </div>
             )

@@ -23,7 +23,7 @@ function AnimatedStarRating({ rating, key: animKey }: { rating: number; key: num
             damping: 15,
             delay: star * 0.1,
           }}
-          className={`w-5 h-5 ${star <= rating ? 'text-gold' : 'text-dark-lighter'}`}
+          className={`w-5 h-5 ${star <= rating ? 'text-gold' : 'text-line-strong'}`}
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -92,8 +92,8 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(201,169,110,0.1) 0%, transparent 50%),
-                             radial-gradient(circle at 80% 50%, rgba(212,175,55,0.08) 0%, transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(31, 100, 117,0.1) 0%, transparent 50%),
+                             radial-gradient(circle at 80% 50%, rgba(47, 130, 150,0.08) 0%, transparent 50%)`,
           }}
         />
       </div>
@@ -148,7 +148,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-gray-300 text-lg md:text-xl leading-relaxed italic mb-8 font-light"
+                className="text-ink-soft text-lg md:text-xl leading-relaxed italic mb-8 font-light"
               >
                 &ldquo;{testimonial.quote}&rdquo;
               </motion.p>
@@ -162,7 +162,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
               />
 
               {/* Author — typewriter name */}
-              <p className="font-heading text-lg text-white font-bold">
+              <p className="font-heading text-lg text-ink font-bold">
                 <TypewriterName name={testimonial.name} key={testimonial.id} />
               </p>
               <motion.p
@@ -177,7 +177,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="text-gray-500 text-xs mt-1"
+                className="text-ink-soft text-xs mt-1"
               >
                 {testimonial.location}
               </motion.p>

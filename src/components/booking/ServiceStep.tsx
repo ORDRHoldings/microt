@@ -17,10 +17,10 @@ export default function ServiceStep({
 }: ServiceStepProps) {
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-      <h2 className="font-heading text-3xl text-white text-center mb-2">
+      <h2 className="font-heading text-3xl text-ink text-center mb-2">
         Select Your Service
       </h2>
-      <p className="text-gray-400 text-center mb-8">
+      <p className="text-ink-soft text-center mb-8">
         Choose the treatment that is right for you
       </p>
 
@@ -51,15 +51,15 @@ export default function ServiceStep({
                 />
               )}
 
-              <h3 className="font-heading text-lg text-white mb-2">
+              <h3 className="font-heading text-lg text-ink mb-2">
                 {service.name}
               </h3>
-              <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+              <p className="text-ink-soft text-sm mb-4 line-clamp-2">
                 {service.shortDescription}
               </p>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-500">{service.duration}</span>
+                <span className="text-ink-soft">{service.duration}</span>
                 <span className="text-gold font-semibold">
                   {service.priceRange}
                 </span>
@@ -69,7 +69,7 @@ export default function ServiceStep({
                 <div className="absolute top-3 right-3">
                   <div className="w-6 h-6 rounded-full bg-gold flex items-center justify-center">
                     <svg
-                      className="w-4 h-4 text-black"
+                      className="w-4 h-4 text-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

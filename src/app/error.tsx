@@ -36,17 +36,17 @@ export default function Error({
           </svg>
         </div>
 
-        <h1 className="font-heading text-3xl text-white mb-3">
+        <h1 className="font-heading text-3xl text-ink mb-3">
           Something went wrong
         </h1>
-        <p className="text-white/60 font-body text-sm leading-relaxed mb-8">
+        <p className="text-ink-soft font-body text-sm leading-relaxed mb-8">
           We apologize for the inconvenience. An unexpected error has occurred.
           Please try again.
         </p>
 
         <button
           onClick={() => reset()}
-          className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-dark font-body font-semibold text-sm rounded hover:bg-gold-light transition-colors duration-200"
+          className="inline-flex items-center gap-2 px-8 py-3 bg-gold text-white font-body font-semibold text-sm rounded hover:bg-gold-light transition-colors duration-200"
         >
           <svg
             className="w-4 h-4"

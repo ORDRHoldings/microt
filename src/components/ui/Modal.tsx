@@ -61,7 +61,7 @@ export default function Modal({
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-200 z-20"
+              className="absolute top-4 right-4 text-ink-soft hover:text-ink transition-colors duration-200 z-20"
               aria-label="Close modal"
             >
               <svg

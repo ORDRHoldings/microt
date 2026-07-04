@@ -191,7 +191,7 @@ export default function BookingWizard({ services }: { services: Service[] }) {
         {currentStep > 1 && currentStep < 4 ? (
           <button
             onClick={handleBack}
-            className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"
+            className="text-ink-soft hover:text-ink transition-colors text-sm flex items-center gap-2"
           >
             <svg
               className="w-4 h-4"
@@ -223,7 +223,7 @@ export default function BookingWizard({ services }: { services: Service[] }) {
         {currentStep === 4 && (
           <button
             onClick={handleBack}
-            className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2"
+            className="text-ink-soft hover:text-ink transition-colors text-sm flex items-center gap-2"
           >
             <svg
               className="w-4 h-4"

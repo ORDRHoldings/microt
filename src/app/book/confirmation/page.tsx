@@ -23,10 +23,10 @@ function ConsentQRCard() {
         <p className="text-gold text-xs uppercase tracking-widest font-semibold">
           Next Step
         </p>
-        <h3 className="font-heading text-xl text-white mt-1">
+        <h3 className="font-heading text-xl text-ink mt-1">
           Complete Your Consent Form
         </h3>
-        <p className="text-gray-400 text-xs mt-1 leading-relaxed">
+        <p className="text-ink-soft text-xs mt-1 leading-relaxed">
           Required before your appointment. Takes only a few minutes.
         </p>
       </div>
@@ -37,14 +37,14 @@ function ConsentQRCard() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={qrSrc} alt="Consent Form QR" width={120} height={120} />
         </div>
-        <p className="mt-2 text-gray-500 text-xs">Scan with your phone</p>
+        <p className="mt-2 text-ink-soft text-xs">Scan with your phone</p>
       </div>
 
       {/* Button — always visible */}
       <div className="px-6 py-4 text-center">
         <Link
           href="/consent"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-gold-gradient text-black text-xs font-semibold uppercase tracking-widest rounded hover:shadow-glow transition-shadow duration-300"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gold-gradient text-white text-xs font-semibold uppercase tracking-widest rounded hover:shadow-glow transition-shadow duration-300"
         >
           <span className="md:hidden">Tap to Open Consent Form</span>
           <span className="hidden md:inline">Open on This Device</span>
@@ -136,10 +136,10 @@ export default function ConfirmationPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        <h1 className="font-heading text-4xl text-white mb-3">
+        <h1 className="font-heading text-4xl text-ink mb-3">
           Booking Confirmed!
         </h1>
-        <p className="text-gray-400 mb-8">
+        <p className="text-ink-soft mb-8">
           Thank you for choosing Velvet Brow Studio. We look forward to seeing
           you!
         </p>
@@ -154,7 +154,7 @@ export default function ConfirmationPage() {
           className="bg-dark-light border border-dark-lighter rounded-lg text-left mb-8 overflow-hidden"
         >
           <div className="p-5 border-b border-dark-lighter">
-            <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+            <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
               Booking Reference
             </p>
             <p className="text-gold font-mono text-sm">
@@ -163,17 +163,17 @@ export default function ConfirmationPage() {
           </div>
 
           <div className="p-5 border-b border-dark-lighter">
-            <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+            <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
               Service
             </p>
-            <p className="text-white font-medium">{appointment.serviceName}</p>
+            <p className="text-ink font-medium">{appointment.serviceName}</p>
           </div>
 
           <div className="p-5 border-b border-dark-lighter">
-            <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+            <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
               Date & Time
             </p>
-            <p className="text-white font-medium">
+            <p className="text-ink font-medium">
               {format(
                 new Date(appointment.date + "T00:00:00"),
                 "EEEE, MMMM d, yyyy"
@@ -183,25 +183,25 @@ export default function ConfirmationPage() {
           </div>
 
           <div className="p-5 border-b border-dark-lighter">
-            <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+            <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
               Name
             </p>
-            <p className="text-white">{appointment.clientName}</p>
+            <p className="text-ink">{appointment.clientName}</p>
           </div>
 
           <div className="p-5">
-            <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+            <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
               Email
             </p>
-            <p className="text-white">{appointment.clientEmail}</p>
+            <p className="text-ink">{appointment.clientEmail}</p>
           </div>
 
           {appointment.notes && (
             <div className="p-5 border-t border-dark-lighter">
-              <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+              <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
                 Notes
               </p>
-              <p className="text-gray-300 text-sm">{appointment.notes}</p>
+              <p className="text-ink-soft text-sm">{appointment.notes}</p>
             </div>
           )}
         </motion.div>
@@ -215,7 +215,7 @@ export default function ConfirmationPage() {
           transition={{ delay: 0.5 }}
           className="bg-dark-light border border-dark-lighter rounded-lg p-6 mb-8"
         >
-          <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+          <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
             Booking Reference
           </p>
           <p className="text-gold font-mono text-sm">{appointmentId}</p>
@@ -229,7 +229,7 @@ export default function ConfirmationPage() {
           transition={{ delay: 0.5 }}
           className="bg-dark-light border border-dark-lighter rounded-lg p-6 mb-8"
         >
-          <p className="text-gray-400">No booking reference found.</p>
+          <p className="text-ink-soft">No booking reference found.</p>
         </motion.div>
       )}
 

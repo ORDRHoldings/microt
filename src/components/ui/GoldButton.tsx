@@ -61,7 +61,7 @@ export default function GoldButton({
       className={`
         relative inline-flex items-center justify-center gap-2
         bg-gold-gradient px-8 py-4
-        text-black font-semibold uppercase tracking-widest text-sm
+        text-white font-semibold uppercase tracking-widest text-sm
         rounded overflow-hidden
         transition-shadow duration-300
         hover:shadow-glow-lg
@@ -104,7 +104,7 @@ export default function GoldButton({
         {icon && <span className="text-lg">{icon}</span>}
         <span className="text-shimmer"
           style={{
-            background: 'linear-gradient(90deg, #000 0%, #333 25%, #000 50%, #333 75%, #000 100%)',
+            background: 'linear-gradient(90deg, #ffffff 0%, #dff1f4 25%, #ffffff 50%, #dff1f4 75%, #ffffff 100%)',
             backgroundSize: '200% auto',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',

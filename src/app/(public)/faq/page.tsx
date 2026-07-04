@@ -62,7 +62,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         className="w-full flex items-center justify-between py-5 px-1 text-left group"
         aria-expanded={open}
       >
-        <span className="text-white font-medium text-base md:text-lg pr-4 group-hover:text-gold transition-colors duration-300">
+        <span className="text-ink font-medium text-base md:text-lg pr-4 group-hover:text-gold transition-colors duration-300">
           {question}
         </span>
         <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
@@ -92,7 +92,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <div className="pb-5 px-1 text-gray-400 leading-relaxed whitespace-pre-line">
+            <div className="pb-5 px-1 text-ink-soft leading-relaxed whitespace-pre-line">
               {answer}
             </div>
           </motion.div>
@@ -114,10 +114,10 @@ export default function FAQPage() {
           <p className="text-gold uppercase tracking-[0.25em] text-xs font-semibold mb-4">
             Frequently Asked Questions
           </p>
-          <h1 className="font-heading text-4xl md:text-5xl text-white mb-4">
+          <h1 className="font-heading text-4xl md:text-5xl text-ink mb-4">
             Got Questions?
           </h1>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-ink-soft text-lg leading-relaxed">
             Find answers to the most common questions about our services,
             booking, and what to expect.
           </p>
@@ -139,15 +139,15 @@ export default function FAQPage() {
       <section className="pb-24 md:pb-32">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div className="bg-dark-light border border-gold/20 rounded-xl p-10">
-            <h2 className="font-heading text-2xl md:text-3xl text-white mb-3">
+            <h2 className="font-heading text-2xl md:text-3xl text-ink mb-3">
               Ready to Book Your Appointment?
             </h2>
-            <p className="text-gray-400 mb-8">
+            <p className="text-ink-soft mb-8">
               Our artists are here to help you look and feel your best.
             </p>
             <Link
               href="/book"
-              className="inline-block bg-gold-gradient px-10 py-4 text-black font-semibold uppercase tracking-widest text-sm rounded hover:shadow-glow transition-shadow duration-300"
+              className="inline-block bg-gold-gradient px-10 py-4 text-white font-semibold uppercase tracking-widest text-sm rounded hover:shadow-glow transition-shadow duration-300"
             >
               Book Online
             </Link>
@@ -159,7 +159,7 @@ export default function FAQPage() {
       <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden">
         <Link
           href="/book"
-          className="block bg-gold-gradient text-black text-center py-4 rounded-xl font-semibold uppercase tracking-widest text-sm shadow-glow"
+          className="block bg-gold-gradient text-white text-center py-4 rounded-xl font-semibold uppercase tracking-widest text-sm shadow-glow"
         >
           Book Appointment
         </Link>

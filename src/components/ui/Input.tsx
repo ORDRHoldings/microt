@@ -20,7 +20,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   ({ label, error, variant = "input", className = "", ...props }, ref) => {
     const baseStyles = `
       w-full bg-dark-light border rounded px-4 py-3
-      text-white placeholder-gray-500
+      text-ink placeholder-ink-faint
       transition-all duration-300
       focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30
       disabled:opacity-50 disabled:cursor-not-allowed
@@ -31,7 +31,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-ink-soft mb-2">
             {label}
           </label>
         )}

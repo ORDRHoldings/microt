@@ -67,10 +67,10 @@ export default function ReviewStep({
 
   return (
     <div className="w-full max-w-lg mx-auto px-4">
-      <h2 className="font-heading text-3xl text-white text-center mb-2">
+      <h2 className="font-heading text-3xl text-ink text-center mb-2">
         Review Your Booking
       </h2>
-      <p className="text-gray-400 text-center mb-8">
+      <p className="text-ink-soft text-center mb-8">
         Please confirm everything looks correct
       </p>
 
@@ -84,12 +84,12 @@ export default function ReviewStep({
             `}
           >
             <div className="flex-1">
-              <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+              <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
                 {row.label}
               </p>
-              <p className="text-white font-medium">{row.value}</p>
+              <p className="text-ink font-medium">{row.value}</p>
               {row.sub && (
-                <p className="text-sm text-gray-400 mt-0.5">{row.sub}</p>
+                <p className="text-sm text-ink-soft mt-0.5">{row.sub}</p>
               )}
             </div>
             <button
@@ -106,10 +106,10 @@ export default function ReviewStep({
           <div className="border-t border-dark-lighter p-5">
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+                <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
                   Notes
                 </p>
-                <p className="text-gray-300 text-sm">{bookingData.notes}</p>
+                <p className="text-ink-soft text-sm">{bookingData.notes}</p>
               </div>
               <button
                 onClick={() => onEdit(3)}

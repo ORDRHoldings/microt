@@ -162,7 +162,7 @@ export default function DashboardPage() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-3xl font-bold text-gold">{card.value}</p>
-                <p className="text-sm text-gray-400 mt-1 font-body">
+                <p className="text-sm text-ink-soft mt-1 font-body">
                   {card.label}
                 </p>
               </div>
@@ -174,19 +174,19 @@ export default function DashboardPage() {
 
       {/* Upcoming Appointments */}
       <Card padding="md">
-        <h3 className="text-lg font-heading text-white mb-4">
+        <h3 className="text-lg font-heading text-ink mb-4">
           Upcoming Appointments
         </h3>
 
         {upcoming.length === 0 ? (
-          <p className="text-gray-500 text-sm py-4">
+          <p className="text-ink-soft text-sm py-4">
             No upcoming appointments.
           </p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-left text-gray-500 border-b border-dark-lighter">
+                <tr className="text-left bg-aqua text-ink border-b border-line">
                   <th className="pb-3 pr-4 font-medium">Client</th>
                   <th className="pb-3 pr-4 font-medium">Service</th>
                   <th className="pb-3 pr-4 font-medium">Date</th>
@@ -196,7 +196,7 @@ export default function DashboardPage() {
               </thead>
               <tbody className="divide-y divide-dark-lighter">
                 {upcoming.map((appt) => (
-                  <tr key={appt.id} className="text-gray-300">
+                  <tr key={appt.id} className="text-ink-soft">
                     <td className="py-3 pr-4">{appt.clientName}</td>
                     <td className="py-3 pr-4">{appt.serviceName}</td>
                     <td className="py-3 pr-4">

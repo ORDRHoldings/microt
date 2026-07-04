@@ -25,8 +25,8 @@ export default function SectionHeading({
       className={`text-center mb-16 ${className}`}
     >
       <h2
-        className={`font-playfair text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
-          light ? "text-dark" : "text-white"
+        className={`font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
+          light ? "text-ink" : "text-ink"
         }`}
       >
         {title}
@@ -37,7 +37,7 @@ export default function SectionHeading({
       {subtitle && (
         <p
           className={`max-w-2xl mx-auto text-base md:text-lg ${
-            light ? "text-gray-600" : "text-gray-400"
+            light ? "text-ink-soft" : "text-ink-soft"
           }`}
         >
           {subtitle}

@@ -109,7 +109,7 @@ export default function Navbar({ socialLinks }: NavbarProps) {
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={`text-sm uppercase tracking-wider relative group transition-colors duration-300 ${
-                      isActive ? 'text-gold' : 'text-gray-300 hover:text-gold'
+                      isActive ? 'text-gold' : 'text-ink-soft hover:text-gold'
                     }`}
                   >
                     {link.label}
@@ -137,9 +137,9 @@ export default function Navbar({ socialLinks }: NavbarProps) {
               className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 group"
               aria-label="Open menu"
             >
-              <span className="block w-6 h-[2px] bg-white group-hover:bg-gold transition-colors duration-300" />
-              <span className="block w-6 h-[2px] bg-white group-hover:bg-gold transition-colors duration-300" />
-              <span className="block w-4 h-[2px] bg-white group-hover:bg-gold transition-colors duration-300 self-end mr-[2px]" />
+              <span className="block w-6 h-[2px] bg-ink group-hover:bg-gold transition-colors duration-300" />
+              <span className="block w-6 h-[2px] bg-ink group-hover:bg-gold transition-colors duration-300" />
+              <span className="block w-4 h-[2px] bg-ink group-hover:bg-gold transition-colors duration-300 self-end mr-[2px]" />
             </button>
           </motion.div>
         </div>

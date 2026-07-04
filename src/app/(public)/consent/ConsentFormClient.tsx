@@ -318,7 +318,7 @@ function SignaturePad({
       if (ctx) {
         ctx.beginPath();
         ctx.arc(pos.x, pos.y, 1.2, 0, Math.PI * 2);
-        ctx.fillStyle = "#C9A96E";
+        ctx.fillStyle = "#1F6475";
         ctx.fill();
       }
       setHasSignature(true);
@@ -337,7 +337,7 @@ function SignaturePad({
     ctx.beginPath();
     ctx.moveTo(lastPos.current.x, lastPos.current.y);
     ctx.lineTo(pos.x, pos.y);
-    ctx.strokeStyle = "#C9A96E";
+    ctx.strokeStyle = "#1F6475";
     ctx.lineWidth = 2;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -379,7 +379,7 @@ function SignaturePad({
         />
         {!hasSignature && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <p className="text-gray-600 text-sm select-none">
+            <p className="text-ink-soft text-sm select-none">
               Draw your signature here
             </p>
           </div>
@@ -388,7 +388,7 @@ function SignaturePad({
       <button
         type="button"
         onClick={clear}
-        className="mt-2 text-xs text-gray-500 hover:text-gold transition-colors duration-200 uppercase tracking-wider"
+        className="mt-2 text-xs text-ink-soft hover:text-gold transition-colors duration-200 uppercase tracking-wider"
       >
         Clear signature
       </button>
@@ -409,7 +409,7 @@ function YesNoField({
 }) {
   return (
     <div className="flex items-start justify-between gap-4 py-3 border-b border-dark-lighter/40 last:border-0">
-      <span className="text-gray-300 text-sm leading-relaxed flex-1">
+      <span className="text-ink-soft text-sm leading-relaxed flex-1">
         {label}
       </span>
       <div className="flex gap-1.5 flex-shrink-0">
@@ -418,8 +418,8 @@ function YesNoField({
           onClick={() => onChange(false)}
           className={`min-w-[44px] px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded transition-all duration-200 ${
             !value
-              ? "bg-dark-lighter text-white"
-              : "bg-transparent text-gray-600 border border-dark-lighter hover:border-gray-500"
+              ? "bg-dark-lighter text-ink"
+              : "bg-transparent text-ink-soft border border-dark-lighter hover:border-gray-500"
           }`}
         >
           No
@@ -430,7 +430,7 @@ function YesNoField({
           className={`min-w-[44px] px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded transition-all duration-200 ${
             value
               ? "bg-red-500/20 text-red-400 border border-red-500/40"
-              : "bg-transparent text-gray-600 border border-dark-lighter hover:border-gray-500"
+              : "bg-transparent text-ink-soft border border-dark-lighter hover:border-gray-500"
           }`}
         >
           Yes
@@ -480,7 +480,7 @@ function ConsentCheckbox({
         </div>
       </div>
       <span
-        className="text-gray-300 text-sm leading-relaxed"
+        className="text-ink-soft text-sm leading-relaxed"
         onClick={() => onChange(!checked)}
       >
         {label}
@@ -503,10 +503,10 @@ function ProgressBar({ step }: { step: number }) {
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
                   isDone
-                    ? "bg-gold text-black"
+                    ? "bg-gold text-white"
                     : isActive
                     ? "bg-gold/20 border-2 border-gold text-gold"
-                    : "bg-dark-lighter text-gray-500"
+                    : "bg-dark-lighter text-ink-soft"
                 }`}
               >
                 {isDone ? (
@@ -529,7 +529,7 @@ function ProgressBar({ step }: { step: number }) {
               </div>
               <span
                 className={`mt-1.5 text-xs uppercase tracking-wider hidden sm:block ${
-                  isActive ? "text-gold" : isDone ? "text-gray-400" : "text-gray-600"
+                  isActive ? "text-gold" : isDone ? "text-ink-soft" : "text-ink-soft"
                 }`}
               >
                 {s.label}
@@ -564,7 +564,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-300 mb-2">
+      <label className="block text-sm font-medium text-ink-soft mb-2">
         {label}
         {required && <span className="text-gold ml-1">*</span>}
       </label>
@@ -575,7 +575,7 @@ function Field({
 }
 
 const inputClass =
-  "w-full bg-dark border border-dark-lighter rounded px-4 py-3 text-white placeholder-gray-600 text-sm transition-all duration-300 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30";
+  "w-full bg-dark border border-dark-lighter rounded px-4 py-3 text-ink placeholder-ink-faint text-sm transition-all duration-300 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30";
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
@@ -716,10 +716,10 @@ export default function ConsentFormClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <h1 className="font-heading text-4xl text-white mb-3">
+            <h1 className="font-heading text-4xl text-ink mb-3">
               Consent Form Submitted
             </h1>
-            <p className="text-gray-400 mb-8 leading-relaxed">
+            <p className="text-ink-soft mb-8 leading-relaxed">
               Thank you, {data.clientName}. Your intake and consent form has
               been received. We look forward to seeing you at your{" "}
               <span className="text-gold">{data.treatmentType}</span>{" "}
@@ -733,11 +733,11 @@ export default function ConsentFormClient() {
             transition={{ delay: 0.5 }}
             className="bg-dark-light border border-dark-lighter rounded-lg p-6 mb-8 text-left"
           >
-            <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">
+            <p className="text-xs uppercase tracking-wider text-ink-soft mb-1">
               Record ID
             </p>
             <p className="text-gold font-mono text-sm mb-4">{submissionId}</p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-ink-soft">
               Please keep this reference for your records. Your information has
               been securely saved.
             </p>
@@ -757,7 +757,7 @@ export default function ConsentFormClient() {
             </button>
             <Link
               href="/"
-              className="px-6 py-3 bg-gold-gradient text-black rounded text-sm font-semibold uppercase tracking-widest hover:shadow-glow transition-shadow duration-300 text-center"
+              className="px-6 py-3 bg-gold-gradient text-white rounded text-sm font-semibold uppercase tracking-widest hover:shadow-glow transition-shadow duration-300 text-center"
             >
               Return to Home
             </Link>
@@ -776,10 +776,10 @@ export default function ConsentFormClient() {
         <p className="text-gold uppercase tracking-[0.25em] text-xs font-semibold mb-3">
           Pre-Treatment
         </p>
-        <h1 className="font-heading text-3xl md:text-4xl text-white mb-3">
+        <h1 className="font-heading text-3xl md:text-4xl text-ink mb-3">
           Client Intake &amp; Consent Form
         </h1>
-        <p className="text-gray-400 text-sm leading-relaxed">
+        <p className="text-ink-soft text-sm leading-relaxed">
           Please complete this form before your appointment. All information is
           kept confidential and used solely for treatment purposes.
         </p>
@@ -801,10 +801,10 @@ export default function ConsentFormClient() {
             {step === 1 && (
               <div className="bg-dark-light border border-dark-lighter rounded-xl p-6 md:p-8 space-y-6">
                 <div>
-                  <h2 className="font-heading text-2xl text-white mb-1">
+                  <h2 className="font-heading text-2xl text-ink mb-1">
                     Client Information
                   </h2>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-ink-soft text-sm">
                     Please fill in your details accurately.
                   </p>
                 </div>
@@ -880,12 +880,12 @@ export default function ConsentFormClient() {
             {step === 2 && (
               <div className="bg-dark-light border border-dark-lighter rounded-xl p-6 md:p-8">
                 <div className="mb-6">
-                  <h2 className="font-heading text-2xl text-white mb-1">
+                  <h2 className="font-heading text-2xl text-ink mb-1">
                     Health Assessment
                   </h2>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-ink-soft text-sm">
                     Please answer honestly. Items not selected default to{" "}
-                    <strong className="text-white">No</strong>. All answers are
+                    <strong className="text-ink">No</strong>. All answers are
                     kept confidential.
                   </p>
                 </div>
@@ -923,10 +923,10 @@ export default function ConsentFormClient() {
             {step === 3 && (
               <div className="bg-dark-light border border-dark-lighter rounded-xl p-6 md:p-8">
                 <div className="mb-6">
-                  <h2 className="font-heading text-2xl text-white mb-1">
+                  <h2 className="font-heading text-2xl text-ink mb-1">
                     Consent &amp; Acknowledgements
                   </h2>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-ink-soft text-sm">
                     Please read and check each item carefully. All boxes must be
                     confirmed to proceed.
                   </p>
@@ -950,7 +950,7 @@ export default function ConsentFormClient() {
                 )}
 
                 <div className="mt-6 pt-6 border-t border-dark-lighter flex justify-between items-center">
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-ink-soft">
                     {CONSENT_ITEMS.filter((i) => data[i.key]).length} /{" "}
                     {CONSENT_ITEMS.length} confirmed
                   </span>
@@ -990,10 +990,10 @@ export default function ConsentFormClient() {
             {step === 4 && (
               <div className="bg-dark-light border border-dark-lighter rounded-xl p-6 md:p-8 space-y-6">
                 <div>
-                  <h2 className="font-heading text-2xl text-white mb-1">
+                  <h2 className="font-heading text-2xl text-ink mb-1">
                     Signature
                   </h2>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-ink-soft text-sm">
                     By signing below, you confirm that all information provided
                     is accurate and complete.
                   </p>
@@ -1048,7 +1048,7 @@ export default function ConsentFormClient() {
           {step > 1 ? (
             <button
               onClick={() => goTo(step - 1)}
-              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+              className="flex items-center gap-2 text-ink-soft hover:text-ink transition-colors text-sm"
             >
               <svg
                 className="w-4 h-4"
@@ -1074,7 +1074,7 @@ export default function ConsentFormClient() {
               onClick={handleNext}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="bg-gold-gradient px-8 py-3 text-black font-semibold uppercase tracking-widest text-sm rounded hover:shadow-glow transition-shadow duration-300"
+              className="bg-gold-gradient px-8 py-3 text-white font-semibold uppercase tracking-widest text-sm rounded hover:shadow-glow transition-shadow duration-300"
             >
               Continue
             </motion.button>
@@ -1084,7 +1084,7 @@ export default function ConsentFormClient() {
               disabled={submitting}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="bg-gold-gradient px-8 py-3 text-black font-semibold uppercase tracking-widest text-sm rounded hover:shadow-glow transition-shadow duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-gold-gradient px-8 py-3 text-white font-semibold uppercase tracking-widest text-sm rounded hover:shadow-glow transition-shadow duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {submitting ? "Submitting…" : "Submit Consent Form"}
             </motion.button>

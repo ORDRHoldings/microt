@@ -125,7 +125,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
       {/* Brand */}
       <div className="p-6 border-b border-dark-lighter">
         <h1 className="font-heading text-xl text-gold">Velvet Brow Studio</h1>
-        <p className="text-gray-500 text-xs mt-1 font-body">Admin</p>
+        <p className="text-ink-soft text-xs mt-1 font-body">Admin</p>
       </div>
 
       {/* Navigation */}
@@ -146,7 +146,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
                 ${
                   isActive
                     ? "text-gold bg-gold/5"
-                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                    : "text-ink-soft hover:text-ink hover:bg-ink/5"
                 }
               `}
             >
@@ -161,7 +161,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
 
         {/* CMS section */}
         <div className="px-6 pt-5 pb-1">
-          <p className="text-xs font-medium text-gray-600 uppercase tracking-widest font-body">
+          <p className="text-xs font-medium text-ink-soft uppercase tracking-widest font-body">
             Content
           </p>
         </div>
@@ -181,7 +181,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
                 ${
                   isActive
                     ? "text-gold bg-gold/5"
-                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                    : "text-ink-soft hover:text-ink hover:bg-ink/5"
                 }
               `}
             >
@@ -201,7 +201,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
           href="/consent/qr"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-400 hover:text-gold transition-colors duration-200 font-body"
+          className="flex items-center gap-3 px-4 py-2.5 text-sm text-ink-soft hover:text-gold transition-colors duration-200 font-body"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z" />
@@ -213,7 +213,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-400 hover:text-white transition-colors duration-200 font-body"
+          className="flex items-center gap-3 px-4 py-2.5 text-sm text-ink-soft hover:text-ink transition-colors duration-200 font-body"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
@@ -222,7 +222,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
         </a>
         <button
           onClick={handleLogout}
-          className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-400 hover:text-red-400 transition-colors duration-200 w-full text-left font-body"
+          className="flex items-center gap-3 px-4 py-2.5 text-sm text-ink-soft hover:text-red-400 transition-colors duration-200 w-full text-left font-body"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />

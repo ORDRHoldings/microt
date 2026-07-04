@@ -86,7 +86,7 @@ function GalleryCard({
 
       {/* Type badge */}
       {item.type === 'before-after' && (
-        <span className="absolute top-3 left-3 px-2 py-0.5 bg-gold/90 text-black text-[10px] font-bold uppercase tracking-wider rounded z-10">
+        <span className="absolute top-3 left-3 px-2 py-0.5 bg-gold/90 text-white text-[10px] font-bold uppercase tracking-wider rounded z-10">
           Before &amp; After
         </span>
       )}
@@ -119,7 +119,7 @@ function GalleryCard({
             </svg>
           </div>
           <p className="text-white text-sm font-medium">{item.title}</p>
-          <p className="text-gold/60 text-xs mt-1">{item.category}</p>
+          <p className="text-aqua/90 text-xs mt-1">{item.category}</p>
         </motion.div>
       </div>
 
@@ -154,8 +154,8 @@ export default function GallerySection() {
               onClick={() => setActiveFilter(cat)}
               className={`relative px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeFilter === cat
-                  ? 'bg-gold-gradient text-black shadow-glow-sm'
-                  : 'bg-dark-light text-gray-400 border border-dark-lighter hover:border-gold/30 hover:text-white'
+                  ? 'bg-gold-gradient text-white shadow-glow-sm'
+                  : 'bg-dark-light text-ink-soft border border-dark-lighter hover:border-gold/30 hover:text-ink'
               }`}
             >
               {cat}
@@ -206,7 +206,7 @@ export default function GallerySection() {
             </div>
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-heading text-xl text-white mb-1">
+                <h3 className="font-heading text-xl text-ink mb-1">
                   {selectedItem.title}
                 </h3>
                 <p className="text-gold text-sm">{selectedItem.category}</p>

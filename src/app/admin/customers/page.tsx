@@ -88,14 +88,14 @@ export default function CustomersPage() {
             <Spinner size="lg" />
           </div>
         ) : customers.length === 0 ? (
-          <div className="text-center py-12 text-gray-500 font-body">
+          <div className="text-center py-12 text-ink-soft font-body">
             No customers found.
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-left text-gray-500 border-b border-dark-lighter">
+                <tr className="text-left bg-aqua text-ink border-b border-line">
                   <th className="px-4 pb-3 font-medium">Name</th>
                   <th className="px-4 pb-3 font-medium">Email</th>
                   <th className="px-4 pb-3 font-medium">Phone</th>
@@ -113,7 +113,7 @@ export default function CustomersPage() {
                   return (
                     <React.Fragment key={customer.id}>
                       <tr
-                        className="text-gray-300 hover:bg-dark/50 transition-colors duration-150 cursor-pointer"
+                        className="text-ink-soft hover:bg-dark/50 transition-colors duration-150 cursor-pointer"
                         onClick={() =>
                           setExpandedId(isExpanded ? null : customer.id)
                         }
@@ -121,7 +121,7 @@ export default function CustomersPage() {
                         <td className="px-4 py-3">
                           <div className="flex items-center gap-2">
                             <svg
-                              className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
+                              className={`w-4 h-4 text-ink-soft transition-transform duration-200 ${
                                 isExpanded ? "rotate-90" : ""
                               }`}
                               fill="none"
@@ -135,7 +135,7 @@ export default function CustomersPage() {
                                 d="M8.25 4.5l7.5 7.5-7.5 7.5"
                               />
                             </svg>
-                            <span className="font-medium text-white">
+                            <span className="font-medium text-ink">
                               {customer.name}
                             </span>
                           </div>
@@ -165,11 +165,11 @@ export default function CustomersPage() {
                         <tr>
                           <td colSpan={6} className="px-4 py-4 bg-dark/30">
                             <div className="pl-6">
-                              <h4 className="text-sm font-medium text-white mb-3">
+                              <h4 className="text-sm font-medium text-ink mb-3">
                                 Appointment History
                               </h4>
                               {custAppts.length === 0 ? (
-                                <p className="text-gray-500 text-xs">
+                                <p className="text-ink-soft text-xs">
                                   No appointment records.
                                 </p>
                               ) : (
@@ -183,7 +183,7 @@ export default function CustomersPage() {
                                     .map((appt) => (
                                       <div
                                         key={appt.id}
-                                        className="flex items-center gap-4 text-xs text-gray-400 py-1.5 border-b border-dark-lighter/50 last:border-0"
+                                        className="flex items-center gap-4 text-xs text-ink-soft py-1.5 border-b border-dark-lighter/50 last:border-0"
                                       >
                                         <span className="min-w-[100px]">
                                           {format(
@@ -194,7 +194,7 @@ export default function CustomersPage() {
                                         <span className="min-w-[80px]">
                                           {appt.time}
                                         </span>
-                                        <span className="min-w-[140px] text-gray-300">
+                                        <span className="min-w-[140px] text-ink-soft">
                                           {appt.serviceName}
                                         </span>
                                         <Badge variant={appt.status}>

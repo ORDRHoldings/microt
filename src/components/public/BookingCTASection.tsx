@@ -3,7 +3,6 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import GoldButton from '@/components/ui/GoldButton';
 
 const trustBadges = [
   {
@@ -20,7 +19,7 @@ const trustBadges = [
   },
 ];
 
-function FloatingGoldElements() {
+function FloatingAquaElements() {
   const elements = useMemo(
     () =>
       Array.from({ length: 6 }, (_, i) => ({
@@ -46,8 +45,8 @@ function FloatingGoldElements() {
             height: el.size,
             left: `${el.left}%`,
             top: `${el.top}%`,
-            background: `radial-gradient(circle, rgba(201,169,110,${el.opacity * 3}) 0%, transparent 70%)`,
-            border: '1px solid rgba(201,169,110,0.06)',
+            background: `radial-gradient(circle, rgba(173,218,224,${el.opacity * 4}) 0%, transparent 70%)`,
+            border: '1px solid rgba(173,218,224,0.18)',
           }}
           animate={{
             y: [-20, 20, -20],
@@ -69,27 +68,27 @@ function FloatingGoldElements() {
 export default function BookingCTASection() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
-      {/* Animated gradient background */}
+      {/* Deep aqua band — a rich home for the brand color against the white page */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(135deg, rgba(10,10,10,1) 0%, rgba(26,26,26,1) 25%, rgba(10,10,10,1) 50%, rgba(26,26,26,1) 75%, rgba(10,10,10,1) 100%)',
+            'linear-gradient(135deg, #1f6475 0%, #164e5c 25%, #1f6475 50%, #164e5c 75%, #1f6475 100%)',
           backgroundSize: '400% 400%',
           animation: 'gradientShift 12s ease infinite',
         }}
       />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,169,110,0.08)_0%,_transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.05)_0%,_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(173,218,224,0.16)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(173,218,224,0.10)_0%,_transparent_50%)]" />
 
-      {/* Floating decorative gold elements */}
-      <FloatingGoldElements />
+      {/* Floating decorative aqua elements */}
+      <FloatingAquaElements />
 
-      {/* Decorative borders */}
+      {/* Decorative aqua hairlines */}
       <motion.div
         className="absolute top-0 left-0 right-0 h-[1px]"
         style={{
-          background: 'linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(173,218,224,0.55), transparent)',
           backgroundSize: '200% 100%',
           animation: 'textShimmer 6s linear infinite',
         }}
@@ -97,7 +96,7 @@ export default function BookingCTASection() {
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-[1px]"
         style={{
-          background: 'linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(173,218,224,0.55), transparent)',
           backgroundSize: '200% 100%',
           animation: 'textShimmer 6s linear infinite',
           animationDelay: '3s',
@@ -116,26 +115,25 @@ export default function BookingCTASection() {
             filter: { duration: 0.6 },
           }}
         >
-          <p className="text-shimmer uppercase tracking-[0.3em] text-xs md:text-sm mb-6 inline-block">
+          <p className="uppercase tracking-[0.3em] text-xs md:text-sm font-medium text-aqua mb-6 inline-block">
             Begin Your Transformation
           </p>
 
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Experience the Art of{' '}
-            <span className="text-shimmer">
-              Perfect Brows
-            </span>
+            <span className="italic text-aqua">Perfect Brows</span>
           </h2>
 
-          <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-xl mx-auto">
+          <p className="text-white/75 text-lg md:text-xl mb-10 max-w-xl mx-auto">
             Book your complimentary consultation and discover your signature
             look. Limited appointments available each week.
           </p>
 
-          <Link href="/book">
-            <GoldButton className="text-sm md:text-base px-12 py-5 glow-pulse-btn">
-              Book Your Appointment
-            </GoldButton>
+          <Link
+            href="/book"
+            className="glow-pulse-btn inline-flex items-center justify-center gap-2 bg-white text-gold hover:bg-aqua-soft px-12 py-5 rounded font-semibold uppercase tracking-widest text-sm shadow-glow-lg transition-colors duration-300"
+          >
+            Book Your Appointment
           </Link>
 
           {/* Trust badges */}
@@ -152,10 +150,10 @@ export default function BookingCTASection() {
                   damping: 25,
                   delay: 0.3 + index * 0.1,
                 }}
-                className="flex items-center gap-2 text-gray-400"
+                className="flex items-center gap-2 text-white/85"
               >
                 <svg
-                  className="w-5 h-5 text-gold/60"
+                  className="w-5 h-5 text-aqua"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

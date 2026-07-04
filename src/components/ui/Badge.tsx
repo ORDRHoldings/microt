@@ -9,10 +9,10 @@ interface BadgeProps {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  pending: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-  confirmed: "bg-green-500/20 text-green-400 border-green-500/30",
-  completed: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  cancelled: "bg-red-500/20 text-red-400 border-red-500/30",
+  pending: "bg-amber-100 text-amber-700 border-amber-200",
+  confirmed: "bg-emerald-100 text-emerald-700 border-emerald-200",
+  completed: "bg-sky-100 text-sky-700 border-sky-200",
+  cancelled: "bg-rose-100 text-rose-700 border-rose-200",
 };
 
 export default function Badge({

@@ -68,7 +68,7 @@ export default function MailingListPage() {
               <p className="text-3xl font-bold text-gold">
                 {subscribers.length}
               </p>
-              <p className="text-sm text-gray-400 font-body">
+              <p className="text-sm text-ink-soft font-body">
                 Total Subscribers
               </p>
             </div>
@@ -109,14 +109,14 @@ export default function MailingListPage() {
             <Spinner size="lg" />
           </div>
         ) : filtered.length === 0 ? (
-          <div className="text-center py-12 text-gray-500 font-body">
+          <div className="text-center py-12 text-ink-soft font-body">
             {search ? "No subscribers match your filter." : "No subscribers yet."}
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-left text-gray-500 border-b border-dark-lighter">
+                <tr className="text-left bg-aqua text-ink border-b border-line">
                   <th className="px-4 pb-3 pt-4 font-medium">Email</th>
                   <th className="px-4 pb-3 pt-4 font-medium">
                     Subscribed Date
@@ -127,9 +127,9 @@ export default function MailingListPage() {
                 {filtered.map((sub) => (
                   <tr
                     key={sub.id}
-                    className="text-gray-300 hover:bg-dark/50 transition-colors duration-150"
+                    className="text-ink-soft hover:bg-dark/50 transition-colors duration-150"
                   >
-                    <td className="px-4 py-3 font-medium text-white">
+                    <td className="px-4 py-3 font-medium text-ink">
                       {sub.email}
                     </td>
                     <td className="px-4 py-3">

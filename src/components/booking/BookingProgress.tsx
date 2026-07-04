@@ -28,10 +28,10 @@ export default function BookingProgress({ currentStep }: BookingProgressProps) {
                     text-sm font-semibold transition-all duration-500
                     ${
                       isCompleted
-                        ? "bg-gold text-black"
+                        ? "bg-gold text-white"
                         : isActive
-                        ? "bg-gold text-black shadow-glow"
-                        : "bg-dark-lighter text-gray-500 border border-dark-lighter"
+                        ? "bg-gold text-white shadow-glow"
+                        : "bg-dark-lighter text-ink-soft border border-dark-lighter"
                     }
                   `}
                 >
@@ -61,7 +61,7 @@ export default function BookingProgress({ currentStep }: BookingProgressProps) {
                         ? "text-gold"
                         : isCompleted
                         ? "text-gold/70"
-                        : "text-gray-500"
+                        : "text-ink-soft"
                     }
                   `}
                 >

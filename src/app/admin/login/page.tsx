@@ -50,7 +50,7 @@ export default function AdminLoginPage() {
           <h1 className="font-heading text-3xl text-gold mb-2">
             Velvet Brow Studio
           </h1>
-          <p className="text-gray-400 text-sm font-body">Admin Panel</p>
+          <p className="text-ink-soft text-sm font-body">Admin Panel</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">

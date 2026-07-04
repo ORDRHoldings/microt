@@ -2,42 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================
+   LIGHT THEME TOKENS
+   ========================================== */
+:root {
+  --paper: #ffffff;
+  --mist: #f5fafb;
+  --ink: #12181a;
+  --ink-soft: #4a575b;
+  --aqua: #addae0;
+  --aqua-soft: #dceff2;
+  --aqua-mid: #7fbfcb;
+  --aqua-deep: #1f6475;
+  --line: #e4eaec;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 ::selection {
-  background-color: rgba(201, 169, 110, 0.4);
-  color: #fff;
+  background-color: rgba(173, 218, 224, 0.55);
+  color: var(--ink);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #eef4f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c9a96e;
-  border-radius: 3px;
+  background: #c3dee3;
+  border-radius: 6px;
+  border: 2px solid #eef4f5;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4af37;
+  background: var(--aqua-mid);
 }
 
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #c9a96e #0a0a0a;
+  scrollbar-color: #c3dee3 #eef4f5;
+}
+
+/* ==========================================
+   BASE TYPE RHYTHM
+   ========================================== */
+@layer base {
+  body {
+    font-feature-settings: "kern", "liga", "calt";
+    line-height: 1.7;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+  }
 }
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #c9a96e 0%, #d4af37 50%, #c9a96e 100%);
+    background: linear-gradient(120deg, #1f6475 0%, #2f8296 55%, #1f6475 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -45,6 +85,32 @@ html {
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Eyebrow / kicker label */
+  .eyebrow {
+    font-family: var(--font-body), sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--aqua-deep);
+  }
+}
+
+@layer components {
+  /* Elevated white surface (cards, panels) */
+  .surface-card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px rgba(16, 24, 26, 0.04), 0 10px 30px rgba(16, 24, 26, 0.06);
+  }
+
+  /* Soft aqua divider line */
+  .divider-aqua {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--aqua), transparent);
   }
 }
 
@@ -67,8 +133,8 @@ html {
 
 /* Glow pulse */
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(201, 169, 110, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(201, 169, 110, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(31, 100, 117, 0.16); }
+  50% { box-shadow: 0 0 40px rgba(31, 100, 117, 0.30); }
 }
 
 /* Text shimmer */
@@ -93,27 +159,27 @@ html {
   100% { transform: rotate(360deg) scale(1); }
 }
 
-/* Gold line expand */
+/* Accent line expand */
 @keyframes lineExpand {
   0% { width: 0; }
   100% { width: 100%; }
 }
 
 .text-shimmer {
-  background: linear-gradient(90deg, #C9A96E 0%, #fff 25%, #D4AF37 50%, #fff 75%, #C9A96E 100%);
+  background: linear-gradient(90deg, #1f6475 0%, #7fbfcb 25%, #2f8296 50%, #7fbfcb 75%, #1f6475 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textShimmer 4s linear infinite;
 }
 
-/* Glass effect */
+/* Glass effect (light) */
 .glass {
-  background: rgba(15, 12, 11, 0.7);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(201, 169, 110, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(31, 100, 117, 0.12);
+  box-shadow: 0 8px 32px rgba(16, 24, 26, 0.08);
 }
 
 /* Magnetic hover glow */
@@ -121,16 +187,16 @@ html {
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .hover-glow:hover {
-  box-shadow: 0 0 40px rgba(201, 169, 110, 0.4), 0 0 80px rgba(201, 169, 110, 0.15);
+  box-shadow: 0 14px 40px rgba(31, 100, 117, 0.14), 0 0 0 1px rgba(31, 100, 117, 0.06);
   transform: translateY(-4px) scale(1.01);
-  border-color: rgba(201, 169, 110, 0.5);
+  border-color: rgba(31, 100, 117, 0.30);
 }
 
 /* Soft Lighting Overlays */
 .soft-light-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(201, 169, 110, 0.15), transparent 60%);
+  background: radial-gradient(circle at 50% 0%, rgba(173, 218, 224, 0.35), transparent 60%);
   pointer-events: none;
   z-index: 1;
 }
@@ -140,7 +206,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.04;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
@@ -156,23 +222,23 @@ html {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(var(--border-angle, 0deg), rgba(201, 169, 110, 0.8), transparent, rgba(212, 175, 55, 0.8), transparent);
+  background: linear-gradient(var(--border-angle, 0deg), rgba(31, 100, 117, 0.8), transparent, rgba(47, 130, 150, 0.8), transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: borderTrace 5s linear infinite;
 }
 
-/* Floating gold particle */
+/* Floating aqua particle */
 .gold-particle {
   position: absolute;
   width: 3px;
   height: 3px;
-  background: radial-gradient(circle, rgba(201, 169, 110, 0.9) 0%, transparent 80%);
+  background: radial-gradient(circle, rgba(31, 100, 117, 0.55) 0%, transparent 80%);
   border-radius: 50%;
   animation: float 7s ease-in-out infinite;
   pointer-events: none;
-  box-shadow: 0 0 8px rgba(201, 169, 110, 0.6);
+  box-shadow: 0 0 8px rgba(31, 100, 117, 0.35);
 }
 
 /* Glow pulse button */

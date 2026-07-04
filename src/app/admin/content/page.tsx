@@ -124,14 +124,14 @@ export default function AdminContentPage() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <div className="flex items-center gap-3">
-            <h1 className="font-heading text-3xl text-white">Site Content</h1>
+            <h1 className="font-heading text-3xl text-ink">Site Content</h1>
             {isDirty && (
               <span className="text-xs text-amber-400 bg-amber-400/10 px-2 py-1 rounded">
                 Unsaved
               </span>
             )}
           </div>
-          <p className="text-gray-400 text-sm mt-1">
+          <p className="text-ink-soft text-sm mt-1">
             Edit studio info, contact details, and business hours
           </p>
         </div>
@@ -152,7 +152,7 @@ export default function AdminContentPage() {
       <div className="space-y-6">
         {/* Brand */}
         <Card>
-          <h2 className="font-heading text-xl text-white mb-4">Studio Info</h2>
+          <h2 className="font-heading text-xl text-ink mb-4">Studio Info</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Field label="Studio Name">
               <input
@@ -224,7 +224,7 @@ export default function AdminContentPage() {
 
         {/* Social Links */}
         <Card>
-          <h2 className="font-heading text-xl text-white mb-4">Social Links</h2>
+          <h2 className="font-heading text-xl text-ink mb-4">Social Links</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Field label="Instagram URL">
               <input
@@ -258,7 +258,7 @@ export default function AdminContentPage() {
 
         {/* Business Hours */}
         <Card>
-          <h2 className="font-heading text-xl text-white mb-4">
+          <h2 className="font-heading text-xl text-ink mb-4">
             Business Hours
           </h2>
           <div className="space-y-3">
@@ -270,7 +270,7 @@ export default function AdminContentPage() {
                   key={day}
                   className="flex items-center gap-4 py-2 border-b border-dark-lighter/50 last:border-0"
                 >
-                  <span className="w-28 text-sm text-gray-300 flex-shrink-0">
+                  <span className="w-28 text-sm text-ink-soft flex-shrink-0">
                     {day}
                   </span>
                   <label className="flex items-center gap-2 cursor-pointer flex-shrink-0">
@@ -280,7 +280,7 @@ export default function AdminContentPage() {
                       onChange={(e) => setHours(day, "closed", e.target.checked)}
                       className="w-4 h-4 accent-gold"
                     />
-                    <span className="text-sm text-gray-400">Closed</span>
+                    <span className="text-sm text-ink-soft">Closed</span>
                   </label>
                   {!isClosed && (
                     <div className="flex items-center gap-2 flex-1">
@@ -291,7 +291,7 @@ export default function AdminContentPage() {
                         placeholder="9:00 AM"
                         className={`${inputClass} w-28`}
                       />
-                      <span className="text-gray-500 text-sm">to</span>
+                      <span className="text-ink-soft text-sm">to</span>
                       <input
                         type="text"
                         value={hours?.close ?? ""}
@@ -338,11 +338,11 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label className="block text-sm text-gray-400 mb-1.5">{label}</label>
+      <label className="block text-sm text-ink-soft mb-1.5">{label}</label>
       {children}
     </div>
   );
 }
 
 const inputClass =
-  "w-full bg-dark border border-dark-lighter rounded px-3 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-gold/50 transition-colors";
+  "w-full bg-dark border border-dark-lighter rounded px-3 py-2.5 text-sm text-ink placeholder-ink-faint focus:outline-none focus:border-gold/50 transition-colors";

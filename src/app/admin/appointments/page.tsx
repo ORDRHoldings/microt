@@ -89,8 +89,8 @@ export default function AppointmentsPage() {
                   px-4 py-2 text-sm rounded font-body transition-all duration-200
                   ${
                     statusFilter === tab.value
-                      ? "bg-gold text-black"
-                      : "bg-dark text-gray-400 hover:text-white border border-dark-lighter"
+                      ? "bg-gold text-white"
+                      : "bg-dark text-ink-soft hover:text-ink border border-dark-lighter"
                   }
                 `}
               >
@@ -105,12 +105,12 @@ export default function AppointmentsPage() {
               type="date"
               value={dateFilter}
               onChange={(e) => setDateFilter(e.target.value)}
-              className="bg-dark border border-dark-lighter rounded px-4 py-2 text-sm text-white font-body focus:outline-none focus:border-gold transition-colors duration-200"
+              className="bg-dark border border-dark-lighter rounded px-4 py-2 text-sm text-ink font-body focus:outline-none focus:border-gold transition-colors duration-200"
             />
             {dateFilter && (
               <button
                 onClick={() => setDateFilter("")}
-                className="ml-2 text-xs text-gray-500 hover:text-white transition-colors duration-200"
+                className="ml-2 text-xs text-ink-soft hover:text-ink transition-colors duration-200"
               >
                 Clear
               </button>
@@ -126,14 +126,14 @@ export default function AppointmentsPage() {
             <Spinner size="lg" />
           </div>
         ) : sorted.length === 0 ? (
-          <div className="text-center py-12 text-gray-500 font-body">
+          <div className="text-center py-12 text-ink-soft font-body">
             No appointments found.
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-left text-gray-500 border-b border-dark-lighter">
+                <tr className="text-left bg-aqua text-ink border-b border-line">
                   <th className="px-4 pb-3 font-medium">Client</th>
                   <th className="px-4 pb-3 font-medium">Service</th>
                   <th
@@ -151,14 +151,14 @@ export default function AppointmentsPage() {
                 {sorted.map((appt) => (
                   <tr
                     key={appt.id}
-                    className="text-gray-300 hover:bg-dark/50 transition-colors duration-150"
+                    className="text-ink-soft hover:bg-dark/50 transition-colors duration-150"
                   >
                     <td className="px-4 py-3">
                       <div>
-                        <p className="font-medium text-white">
+                        <p className="font-medium text-ink">
                           {appt.clientName}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-ink-soft">
                           {appt.clientEmail}
                         </p>
                       </div>

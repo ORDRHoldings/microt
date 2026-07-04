@@ -11,11 +11,11 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-gray-500 hover:text-gold transition-colors duration-300"
+      className="text-ink-soft hover:text-gold transition-colors duration-300"
       aria-label={label}
       whileHover={{
         scale: 1.2,
-        filter: 'drop-shadow(0 0 8px rgba(201,169,110,0.5))',
+        filter: 'drop-shadow(0 0 8px rgba(31, 100, 117,0.5))',
       }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
@@ -65,7 +65,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
       <div
         className="absolute top-0 left-0 right-0 h-[2px]"
         style={{
-          background: 'linear-gradient(90deg, transparent 0%, rgba(201,169,110,0.6) 25%, rgba(212,175,55,0.8) 50%, rgba(201,169,110,0.6) 75%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(31, 100, 117,0.6) 25%, rgba(47, 130, 150,0.8) 50%, rgba(31, 100, 117,0.6) 75%, transparent 100%)',
           backgroundSize: '200% 100%',
           animation: 'textShimmer 6s linear infinite',
         }}
@@ -76,8 +76,8 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 25% 50%, rgba(201,169,110,0.15) 0%, transparent 50%),
-                             radial-gradient(circle at 75% 50%, rgba(201,169,110,0.1) 0%, transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 25% 50%, rgba(31, 100, 117,0.15) 0%, transparent 50%),
+                             radial-gradient(circle at 75% 50%, rgba(31, 100, 117,0.1) 0%, transparent 50%)`,
           }}
         />
       </div>
@@ -93,13 +93,13 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
             <p className="text-gold text-sm uppercase tracking-wider mb-4">
               {brand.tagline}
             </p>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-ink-soft text-sm leading-relaxed mb-4">
               Costa Mesa&apos;s premier luxury permanent makeup studio. We combine
               artistry with precision to enhance your natural beauty, one stroke
               at a time. Specializing in microblading, ombre/powder brows, combo
               brows, lip blush, and eye liner.
             </p>
-            <p className="text-gray-500 text-xs leading-relaxed">
+            <p className="text-ink-soft text-xs leading-relaxed">
               Serving Costa Mesa, Newport Beach, Irvine, and surrounding Orange
               County areas.
             </p>
@@ -107,7 +107,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
 
           {/* Column 2: Quick Links with underline slide-in */}
           <div>
-            <h4 className="font-heading text-lg font-bold text-white mb-6">
+            <h4 className="font-heading text-lg font-bold text-ink mb-6">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -115,7 +115,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-gray-400 text-sm hover:text-gold transition-colors duration-300 relative group inline-block"
+                    className="text-ink-soft text-sm hover:text-gold transition-colors duration-300 relative group inline-block"
                   >
                     {link.label}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
@@ -125,7 +125,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
               <li>
                 <Link
                   href="/faq"
-                  className="text-gray-400 text-sm hover:text-gold transition-colors duration-300 relative group inline-block"
+                  className="text-ink-soft text-sm hover:text-gold transition-colors duration-300 relative group inline-block"
                 >
                   FAQ
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
@@ -134,7 +134,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
               <li>
                 <Link
                   href="/consent"
-                  className="text-gray-400 text-sm hover:text-gold transition-colors duration-300 relative group inline-block"
+                  className="text-ink-soft text-sm hover:text-gold transition-colors duration-300 relative group inline-block"
                 >
                   Consent Form
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
@@ -154,7 +154,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
 
           {/* Column 3: Contact */}
           <div>
-            <h4 className="font-heading text-lg font-bold text-white mb-6">
+            <h4 className="font-heading text-lg font-bold text-ink mb-6">
               Contact Us
             </h4>
             <ul className="space-y-4">
@@ -174,7 +174,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
                 </svg>
                 <a
                   href={`tel:${brand.phone}`}
-                  className="text-gray-400 text-sm hover:text-gold transition-colors relative group"
+                  className="text-ink-soft text-sm hover:text-gold transition-colors relative group"
                 >
                   {brand.phone}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
@@ -196,7 +196,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
                 </svg>
                 <a
                   href={`mailto:${brand.email}`}
-                  className="text-gray-400 text-sm hover:text-gold transition-colors relative group"
+                  className="text-ink-soft text-sm hover:text-gold transition-colors relative group"
                 >
                   {brand.email}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-full" />
@@ -221,7 +221,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                   />
                 </svg>
-                <span className="text-gray-400 text-sm">
+                <span className="text-ink-soft text-sm">
                   1847 Newport Blvd, Suite 200
                   <br />
                   Costa Mesa, CA 92627
@@ -232,10 +232,10 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
 
           {/* Column 4: Newsletter */}
           <div>
-            <h4 className="font-heading text-lg font-bold text-white mb-6">
+            <h4 className="font-heading text-lg font-bold text-ink mb-6">
               Newsletter
             </h4>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-ink-soft text-sm mb-4">
               Subscribe for exclusive offers, beauty tips, and studio updates.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-3">
@@ -245,15 +245,15 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 required
-                className="w-full bg-dark-light border border-dark-lighter rounded px-4 py-3 text-white placeholder-gray-500 text-sm transition-all duration-300 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 focus:shadow-glow-sm"
+                className="w-full bg-dark-light border border-dark-lighter rounded px-4 py-3 text-ink placeholder-ink-faint text-sm transition-all duration-300 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 focus:shadow-glow-sm"
               />
               <motion.button
                 type="submit"
                 disabled={subscribeStatus === 'loading'}
-                whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(201,169,110,0.3)' }}
+                whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(31, 100, 117,0.3)' }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                className="w-full bg-gold-gradient px-6 py-3 text-black font-semibold uppercase tracking-widest text-xs rounded hover:shadow-glow transition-shadow duration-300 disabled:opacity-50"
+                className="w-full bg-gold-gradient px-6 py-3 text-white font-semibold uppercase tracking-widest text-xs rounded hover:shadow-glow transition-shadow duration-300 disabled:opacity-50"
               >
                 {subscribeStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
               </motion.button>
@@ -303,7 +303,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
           </div>
 
           {/* Copyright */}
-          <p className="text-gray-500 text-xs text-center">
+          <p className="text-ink-soft text-xs text-center">
             &copy; 2026 Velvet Brow Studio. All rights reserved.
           </p>
         </div>

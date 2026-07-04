@@ -50,7 +50,7 @@ function TiltCard({ children, index }: { children: React.ReactNode; index: numbe
           }`}
           style={{
             border: isHovered
-              ? '1px solid rgba(201,169,110,0.4)'
+              ? '1px solid rgba(31, 100, 117,0.4)'
               : '1px solid rgba(42,42,42,1)',
           }}
         >
@@ -62,7 +62,7 @@ function TiltCard({ children, index }: { children: React.ReactNode; index: numbe
               animate={{ opacity: 1 }}
               style={{
                 background:
-                  'linear-gradient(90deg, transparent, rgba(201,169,110,0.08), transparent)',
+                  'linear-gradient(90deg, transparent, rgba(31, 100, 117,0.08), transparent)',
                 backgroundSize: '200% 100%',
                 animation: 'textShimmer 2s linear infinite',
               }}
@@ -103,19 +103,19 @@ export default function ServicesSection({ services }: { services: Service[] }) {
               </div>
 
               {/* Name */}
-              <h3 className="font-heading text-xl font-bold text-white mb-3">
+              <h3 className="font-heading text-xl font-bold text-ink mb-3">
                 {service.name}
               </h3>
 
               {/* Short description */}
-              <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+              <p className="text-ink-soft text-sm leading-relaxed mb-6 flex-1">
                 {service.shortDescription}
               </p>
 
               {/* Price and duration */}
               <div className="flex items-center justify-between text-sm mb-6 pt-4 border-t border-dark-lighter/50">
                 <div className="flex flex-col">
-                  <span className="text-gray-500 text-xs uppercase tracking-wider">Starting at</span>
+                  <span className="text-ink-soft text-xs uppercase tracking-wider">Starting at</span>
                   <motion.span
                     className="text-gold font-semibold text-lg"
                     animate={{ y: [0, -2, 0] }}
@@ -124,7 +124,7 @@ export default function ServicesSection({ services }: { services: Service[] }) {
                     {service.priceRange}
                   </motion.span>
                 </div>
-                <span className="text-gray-500 flex items-center gap-1.5">
+                <span className="text-ink-soft flex items-center gap-1.5">
                   <svg
                     className="w-4 h-4"
                     fill="none"

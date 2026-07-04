@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Raleway } from "next/font/google";
+import { Fraunces, Jost } from "next/font/google";
 import JsonLdScript from "@/components/JsonLdScript";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-heading",
   display: "swap",
 });
 
-const raleway = Raleway({
+const jost = Jost({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
@@ -64,8 +65,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${raleway.variable}`}>
-      <body className="font-body bg-dark text-white antialiased">
+    <html lang="en" className={`${fraunces.variable} ${jost.variable}`}>
+      <body className="font-body bg-white text-ink antialiased">
         <JsonLdScript />
         {children}
       </body>

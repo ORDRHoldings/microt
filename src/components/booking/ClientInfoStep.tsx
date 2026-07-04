@@ -46,10 +46,10 @@ export default function ClientInfoStep({
 
   return (
     <div className="w-full max-w-lg mx-auto px-4">
-      <h2 className="font-heading text-3xl text-white text-center mb-2">
+      <h2 className="font-heading text-3xl text-ink text-center mb-2">
         Your Information
       </h2>
-      <p className="text-gray-400 text-center mb-8">
+      <p className="text-ink-soft text-center mb-8">
         Tell us a bit about yourself
       </p>
 

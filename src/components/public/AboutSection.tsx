@@ -93,8 +93,8 @@ export default function AboutSection() {
                   alt="Lead artist at Velvet Brow Studio"
                   className="w-full h-full object-cover"
                 />
-                {/* Gold overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />
+                {/* Subtle grounding gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
               </motion.div>
             </div>
           </AnimatedSection>
@@ -102,7 +102,7 @@ export default function AboutSection() {
           {/* Story text - line by line reveal */}
           <div className="space-y-6">
             <AnimatedSection direction="right" delay={0.1}>
-              <h3 className="font-heading text-2xl md:text-3xl text-white">
+              <h3 className="font-heading text-2xl md:text-3xl text-ink">
                 Crafting Beauty with{' '}
                 <span className="text-shimmer">
                   Passion &amp; Precision
@@ -112,7 +112,7 @@ export default function AboutSection() {
 
             {textLines.map((line, i) => (
               <AnimatedSection key={i} direction="right" delay={0.2 + i * 0.15}>
-                <p className="text-gray-400 leading-relaxed">{line}</p>
+                <p className="text-ink-soft leading-relaxed">{line}</p>
               </AnimatedSection>
             ))}
 
@@ -147,7 +147,7 @@ export default function AboutSection() {
                 <p className="font-heading text-4xl md:text-5xl font-bold bg-gold-gradient bg-clip-text text-transparent mb-2">
                   <CountUpNumber target={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="text-gray-400 text-sm uppercase tracking-wider">
+                <p className="text-ink-soft text-sm uppercase tracking-wider">
                   {stat.label}
                 </p>
               </motion.div>

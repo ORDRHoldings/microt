@@ -82,13 +82,13 @@ export default function AdminServicesPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="font-heading text-3xl text-white">Services</h1>
-          <p className="text-gray-400 text-sm mt-1">
+          <h1 className="font-heading text-3xl text-ink">Services</h1>
+          <p className="text-ink-soft text-sm mt-1">
             Edit content, pricing, and FAQs. Use arrows to reorder.
           </p>
         </div>
         {savingOrder && (
-          <span className="text-xs text-gray-400 flex items-center gap-2">
+          <span className="text-xs text-ink-soft flex items-center gap-2">
             <Spinner /> Saving order…
           </span>
         )}
@@ -108,7 +108,7 @@ export default function AdminServicesPage() {
               <button
                 onClick={() => move(index, -1)}
                 disabled={index === 0 || savingOrder}
-                className="p-1 text-gray-500 hover:text-white disabled:opacity-20 transition-colors"
+                className="p-1 text-ink-soft hover:text-ink disabled:opacity-20 transition-colors"
                 title="Move up"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -118,7 +118,7 @@ export default function AdminServicesPage() {
               <button
                 onClick={() => move(index, 1)}
                 disabled={index === services.length - 1 || savingOrder}
-                className="p-1 text-gray-500 hover:text-white disabled:opacity-20 transition-colors"
+                className="p-1 text-ink-soft hover:text-ink disabled:opacity-20 transition-colors"
                 title="Move down"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -137,17 +137,17 @@ export default function AdminServicesPage() {
                 />
               )}
               <div className="min-w-0">
-                <h3 className="font-heading text-lg text-white">
+                <h3 className="font-heading text-lg text-ink">
                   {service.name}
                 </h3>
-                <p className="text-gray-400 text-sm truncate">
+                <p className="text-ink-soft text-sm truncate">
                   {service.shortDescription}
                 </p>
                 <div className="flex items-center gap-4 mt-1">
                   <span className="text-gold text-sm font-medium">
                     {service.priceRange}
                   </span>
-                  <span className="text-gray-500 text-xs">
+                  <span className="text-ink-soft text-xs">
                     {service.duration}
                   </span>
                 </div>
@@ -159,7 +159,7 @@ export default function AdminServicesPage() {
                 href={`/services/${service.slug}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-gray-400 hover:text-gold transition-colors"
+                className="p-2 text-ink-soft hover:text-gold transition-colors"
                 title="Preview on public site"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -186,7 +186,7 @@ export default function AdminServicesPage() {
 
         {services.length === 0 && (
           <Card>
-            <p className="text-gray-400 text-center py-8">
+            <p className="text-ink-soft text-center py-8">
               No services found.
             </p>
           </Card>

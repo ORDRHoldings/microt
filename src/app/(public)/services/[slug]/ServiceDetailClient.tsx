@@ -27,17 +27,17 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             </p>
           </AnimatedSection>
           <AnimatedSection direction="up" delay={0.1}>
-            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 text-gold-gradient">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 text-gold-gradient">
               {service.name}
             </h1>
           </AnimatedSection>
           <AnimatedSection direction="up" delay={0.2}>
-            <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="text-ink-soft text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               {service.shortDescription}
             </p>
           </AnimatedSection>
           <AnimatedSection direction="up" delay={0.3}>
-            <div className="flex items-center justify-center gap-6 mt-8 text-sm text-gray-400">
+            <div className="flex items-center justify-center gap-6 mt-8 text-sm text-ink-soft">
               <span className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -64,7 +64,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               {service.description.split("\n\n").map((paragraph, index) => (
                 <p
                   key={index}
-                  className="text-gray-300 leading-relaxed text-base md:text-lg"
+                  className="text-ink-soft leading-relaxed text-base md:text-lg"
                 >
                   {paragraph}
                 </p>
@@ -79,13 +79,13 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-ink mb-4">
                 The Process
               </h2>
               <div className="flex justify-center mb-6">
                 <div className="w-24 h-[2px] bg-gold-gradient rounded-full" />
               </div>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-soft max-w-2xl mx-auto">
                 Every appointment follows our meticulous step-by-step process to ensure exceptional results.
               </p>
             </div>
@@ -106,17 +106,17 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   {/* Step Number */}
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gold-gradient flex items-center justify-center shadow-glow">
-                      <span className="text-black font-bold text-xl md:text-2xl">
+                      <span className="text-white font-bold text-xl md:text-2xl">
                         {index + 1}
                       </span>
                     </div>
                   </div>
                   {/* Step Content */}
                   <div className={`flex-1 ${index % 2 !== 0 ? "md:text-right" : ""}`}>
-                    <h3 className="font-playfair text-xl md:text-2xl font-bold text-white mb-3">
+                    <h3 className="font-heading text-xl md:text-2xl font-bold text-ink mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-ink-soft leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -132,13 +132,13 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         <div className="max-w-3xl mx-auto px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-ink mb-4">
                 Healing Timeline
               </h2>
               <div className="flex justify-center mb-6">
                 <div className="w-24 h-[2px] bg-gold-gradient rounded-full" />
               </div>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <p className="text-ink-soft max-w-2xl mx-auto">
                 What to expect during the healing process after your appointment.
               </p>
             </div>
@@ -163,7 +163,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                       <h3 className="text-gold font-semibold text-base md:text-lg mb-2">
                         {entry.day}
                       </h3>
-                      <p className="text-gray-400 leading-relaxed">
+                      <p className="text-ink-soft leading-relaxed">
                         {entry.description}
                       </p>
                     </div>
@@ -179,7 +179,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
       <section className="py-20 md:py-28 bg-dark-light/30">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimatedSection>
-            <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-ink mb-4">
               Investment in Beauty
             </h2>
             <div className="flex justify-center mb-10">
@@ -189,16 +189,16 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
 
           <AnimatedSection delay={0.1}>
             <div className="bg-dark border border-dark-lighter rounded-lg p-8 md:p-12 mb-10">
-              <p className="text-gold-gradient font-playfair text-5xl md:text-6xl font-bold mb-4">
+              <p className="text-gold-gradient font-heading text-5xl md:text-6xl font-bold mb-4">
                 {service.priceRange}
               </p>
-              <p className="text-gray-400 text-lg mb-2">
-                Session duration: <span className="text-white">{service.duration}</span>
+              <p className="text-ink-soft text-lg mb-2">
+                Session duration: <span className="text-ink">{service.duration}</span>
               </p>
               {service.touchUpPrice && (
-                <p className="text-gray-400 text-sm mt-2">
+                <p className="text-ink-soft text-sm mt-2">
                   Touch Up{" "}
-                  <span className="text-gray-500">(after 6–7 weeks)</span>
+                  <span className="text-ink-soft">(after 6–7 weeks)</span>
                   {" — "}
                   <span className="text-gold font-semibold">
                     {service.touchUpPrice}
@@ -223,7 +223,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         <div className="max-w-3xl mx-auto px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-ink mb-4">
                 Frequently Asked Questions
               </h2>
               <div className="flex justify-center mb-6">

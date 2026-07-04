@@ -99,7 +99,7 @@ export default function InstagramPage() {
     <div className="space-y-6">
       {/* Add Instagram Post */}
       <Card padding="md">
-        <h3 className="text-lg font-heading text-white mb-4">
+        <h3 className="text-lg font-heading text-ink mb-4">
           Add Instagram Post
         </h3>
         <form onSubmit={handleAdd} className="space-y-4">
@@ -131,10 +131,10 @@ export default function InstagramPage() {
       {/* Posts list */}
       <Card padding="sm">
         <div className="px-4 pt-4 pb-2">
-          <h3 className="text-lg font-heading text-white">
+          <h3 className="text-lg font-heading text-ink">
             Saved Posts
             {!loading && (
-              <span className="text-sm text-gray-500 font-body ml-2">
+              <span className="text-sm text-ink-soft font-body ml-2">
                 ({posts.length})
               </span>
             )}
@@ -146,7 +146,7 @@ export default function InstagramPage() {
             <Spinner size="lg" />
           </div>
         ) : posts.length === 0 ? (
-          <div className="text-center py-12 text-gray-500 font-body">
+          <div className="text-center py-12 text-ink-soft font-body">
             No Instagram posts added yet.
           </div>
         ) : (
@@ -166,7 +166,7 @@ export default function InstagramPage() {
                   >
                     {truncateUrl(post.url)}
                   </a>
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-ink-soft mt-1">
                     Added {format(parseISO(post.addedAt), "MMM d, yyyy")}
                   </p>
                 </div>

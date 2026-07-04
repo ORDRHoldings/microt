@@ -58,11 +58,12 @@ Blob collections seed from static defaults on first read:
 - `getTestimonials()` in `testimonials.ts` — seeds from `sampleTestimonials` if blob is empty
 - `getSiteContent()` in `constants.ts` — seeds from `DEFAULT_SITE_CONTENT` if blob is empty
 
-### Branding
+### Branding — Light theme ("Clean clinical-luxe")
 
-- Colors: Gold `#C9A96E`, Champagne `#D4AF37`, Beige `#F5F0E8`, Dark `#0A0A0A`
-- Fonts: Playfair Display (headings, `font-heading` class), Montserrat (body, default)
-- Tailwind custom: `text-gold-gradient` CSS class, `shimmer`/`fadeUp`/`slideIn` animations, `glow`/`glow-lg` box shadows
+- Palette: Paper `#FFFFFF` (page), Ink `#12181A` (text), Aqua `#ADDAE0` (accent — table headers, tags, section bands, dividers), Aqua-deep `#1F6475` (interactive: links/buttons/icons; white text on it = 6.7:1), Mist `#F5FAFB` (alt section bg). Semantic tokens: `paper`, `ink`/`ink-soft`/`ink-faint`, `aqua`/`aqua-soft`/`aqua-mid`/`aqua-deep`, `mist`, `line`/`line-strong`.
+- Fonts: Fraunces (headings, `font-heading`), Jost (body, `font-body`).
+- **CRITICAL — legacy token remap:** The site was flipped from a dark/gold theme to light without renaming classes across 57 files. In `tailwind.config.ts` the legacy token *names* were repointed to light values: `gold`/`champagne` → deep aqua `#1F6475`, `dark`/`dark-light`/`dark-lighter` → white/mist surfaces, `beige` → `#EFF6F7`. So `bg-dark` renders **white** and `text-gold` renders **aqua** — the names lie; trust the values. Prefer the new semantic tokens (`ink`, `aqua`, `mist`) for any new code.
+- Tailwind custom: `text-gold-gradient`/`text-shimmer` (now aqua gradients), `glass` (light), `eyebrow`/`surface-card`/`divider-aqua` utilities, `shimmer`/`fadeUp`/`slideIn` animations, `glow`/`glow-lg` box shadows (aqua-tinted).
 
 ### Key Libraries
 

@@ -92,8 +92,8 @@ export default function AdminTestimonialsPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="font-heading text-3xl text-white">Testimonials</h1>
-          <p className="text-gray-400 text-sm mt-1">
+          <h1 className="font-heading text-3xl text-ink">Testimonials</h1>
+          <p className="text-ink-soft text-sm mt-1">
             {testimonials.length} review{testimonials.length !== 1 ? "s" : ""} · shown in carousel on home page
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function AdminTestimonialsPage() {
       {/* Add form */}
       {showAddForm && (
         <Card className="mb-6 border-gold/20">
-          <h2 className="font-heading text-lg text-white mb-4">New Testimonial</h2>
+          <h2 className="font-heading text-lg text-ink mb-4">New Testimonial</h2>
           <form onSubmit={handleAdd} className="space-y-3">
             <TestimonialForm form={form} onChange={setForm} />
             <div className="flex items-center gap-3 pt-2">
@@ -125,7 +125,7 @@ export default function AdminTestimonialsPage() {
           <Card key={t.id}>
             {editingId === t.id ? (
               <div>
-                <h3 className="font-heading text-base text-white mb-3">Editing</h3>
+                <h3 className="font-heading text-base text-ink mb-3">Editing</h3>
                 <div className="space-y-3">
                   <TestimonialForm form={form} onChange={setForm} />
                   <div className="flex items-center gap-3 pt-2">
@@ -142,16 +142,16 @@ export default function AdminTestimonialsPage() {
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-3 mb-1">
-                    <span className="font-heading text-white">{t.name}</span>
+                    <span className="font-heading text-ink">{t.name}</span>
                     {t.service && (
                       <span className="text-xs text-gold bg-gold/10 px-2 py-0.5 rounded">
                         {t.service}
                       </span>
                     )}
-                    <span className="text-gray-500 text-xs">{t.location}</span>
+                    <span className="text-ink-soft text-xs">{t.location}</span>
                     <StarDisplay rating={t.rating} />
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                  <p className="text-ink-soft text-sm leading-relaxed line-clamp-3">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export default function AdminTestimonialsPage() {
 
         {testimonials.length === 0 && (
           <Card>
-            <p className="text-gray-400 text-center py-8">No testimonials yet.</p>
+            <p className="text-ink-soft text-center py-8">No testimonials yet.</p>
           </Card>
         )}
       </div>
@@ -191,30 +191,30 @@ function TestimonialForm({
   form: { name: string; service: string; quote: string; rating: number; location: string };
   onChange: (f: typeof form) => void;
 }) {
-  const ic = "w-full bg-dark border border-dark-lighter rounded px-3 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-gold/50 transition-colors";
+  const ic = "w-full bg-dark border border-dark-lighter rounded px-3 py-2.5 text-sm text-ink placeholder-ink-faint focus:outline-none focus:border-gold/50 transition-colors";
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Client Name *</label>
+        <label className="block text-xs text-ink-soft mb-1">Client Name *</label>
         <input type="text" required value={form.name} onChange={(e) => onChange({ ...form, name: e.target.value })} className={ic} />
       </div>
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Service</label>
+        <label className="block text-xs text-ink-soft mb-1">Service</label>
         <input type="text" value={form.service} onChange={(e) => onChange({ ...form, service: e.target.value })} className={ic} placeholder="e.g. Microblading" />
       </div>
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Location</label>
+        <label className="block text-xs text-ink-soft mb-1">Location</label>
         <input type="text" value={form.location} onChange={(e) => onChange({ ...form, location: e.target.value })} className={ic} placeholder="e.g. Newport Beach, CA" />
       </div>
       <div>
-        <label className="block text-xs text-gray-400 mb-1">Rating</label>
+        <label className="block text-xs text-ink-soft mb-1">Rating</label>
         <select value={form.rating} onChange={(e) => onChange({ ...form, rating: Number(e.target.value) })}
           className={ic}>
           {[5, 4, 3, 2, 1].map((r) => <option key={r} value={r}>{r} star{r !== 1 ? "s" : ""}</option>)}
         </select>
       </div>
       <div className="md:col-span-2">
-        <label className="block text-xs text-gray-400 mb-1">Quote *</label>
+        <label className="block text-xs text-ink-soft mb-1">Quote *</label>
         <textarea required rows={4} value={form.quote} onChange={(e) => onChange({ ...form, quote: e.target.value })}
           className={`${ic} resize-y`} />
       </div>

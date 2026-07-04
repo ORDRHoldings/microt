@@ -35,7 +35,7 @@ export default function ConsentQRSection() {
                     className="block"
                   />
                 </div>
-                <p className="mt-3 text-gray-500 text-xs uppercase tracking-wider text-center">
+                <p className="mt-3 text-ink-soft text-xs uppercase tracking-wider text-center">
                   Scan with your phone
                 </p>
               </div>
@@ -45,10 +45,10 @@ export default function ConsentQRSection() {
                 <p className="text-gold text-xs uppercase tracking-[0.2em] font-semibold mb-2">
                   Before Your Appointment
                 </p>
-                <h3 className="font-heading text-2xl md:text-3xl text-white mb-3">
+                <h3 className="font-heading text-2xl md:text-3xl text-ink mb-3">
                   Complete Your Consent Form
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                <p className="text-ink-soft text-sm leading-relaxed mb-6">
                   Save time at the studio by completing your client intake and
                   consent form in advance. Scan the QR code with your phone, or
                   tap the button below to open the form.
@@ -57,7 +57,7 @@ export default function ConsentQRSection() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
                     href="/consent"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-gradient text-black font-semibold uppercase tracking-widest text-xs rounded hover:shadow-glow transition-shadow duration-300"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-gradient text-white font-semibold uppercase tracking-widest text-xs rounded hover:shadow-glow transition-shadow duration-300"
                   >
                     Open Consent Form
                     <svg
@@ -74,12 +74,12 @@ export default function ConsentQRSection() {
                       />
                     </svg>
                   </Link>
-                  <p className="text-gray-600 text-xs self-center hidden sm:block">
+                  <p className="text-ink-soft text-xs self-center hidden sm:block">
                     or scan the QR code →
                   </p>
                 </div>
 
-                <p className="mt-4 text-gray-600 text-xs font-mono">
+                <p className="mt-4 text-ink-soft text-xs font-mono">
                   {consentUrl}
                 </p>
               </div>

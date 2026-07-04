@@ -12,7 +12,7 @@ function AnimatedIcon({ children, delay = 0 }: { children: React.ReactNode; dela
       className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-gold/20 hover:shadow-glow-sm cursor-default"
       whileHover={{
         y: -3,
-        boxShadow: '0 0 20px rgba(201, 169, 110, 0.3)',
+        boxShadow: '0 0 20px rgba(31, 100, 117, 0.3)',
       }}
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
@@ -49,7 +49,7 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
             <div className="space-y-8">
               {/* Visit Our Studio */}
               <div>
-                <h3 className="font-heading text-2xl text-white mb-6">
+                <h3 className="font-heading text-2xl text-ink mb-6">
                   Visit Our{' '}
                   <span className="text-shimmer">
                     Studio
@@ -75,10 +75,10 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                   </svg>
                 </AnimatedIcon>
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Phone</h4>
+                  <h4 className="text-ink font-semibold mb-1">Phone</h4>
                   <a
                     href={`tel:${brand.phone}`}
-                    className="text-gray-400 hover:text-gold transition-colors"
+                    className="text-ink-soft hover:text-gold transition-colors"
                   >
                     {brand.phone}
                   </a>
@@ -103,10 +103,10 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                   </svg>
                 </AnimatedIcon>
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Email</h4>
+                  <h4 className="text-ink font-semibold mb-1">Email</h4>
                   <a
                     href={`mailto:${brand.email}`}
-                    className="text-gray-400 hover:text-gold transition-colors"
+                    className="text-ink-soft hover:text-gold transition-colors"
                   >
                     {brand.email}
                   </a>
@@ -136,8 +136,8 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                   </svg>
                 </AnimatedIcon>
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Location</h4>
-                  <p className="text-gray-400">
+                  <h4 className="text-ink font-semibold mb-1">Location</h4>
+                  <p className="text-ink-soft">
                     1847 Newport Blvd, Suite 200
                     <br />
                     Costa Mesa, CA 92627
@@ -148,7 +148,7 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
               {/* Free parking note */}
               <motion.div
                 className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gold/5 border border-gold/15"
-                whileHover={{ borderColor: 'rgba(201,169,110,0.3)', scale: 1.01 }}
+                whileHover={{ borderColor: 'rgba(31, 100, 117,0.3)', scale: 1.01 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
               >
                 <svg
@@ -187,7 +187,7 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                   </svg>
                 </AnimatedIcon>
                 <div className="flex-1">
-                  <h4 className="text-white font-semibold mb-3">
+                  <h4 className="text-ink font-semibold mb-3">
                     Business Hours
                   </h4>
                   <table className="w-full">
@@ -206,10 +206,10 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                             delay: 0.4 + index * 0.05,
                           }}
                         >
-                          <td className="text-gray-400 text-sm py-2 pr-4">
+                          <td className="text-ink-soft text-sm py-2 pr-4">
                             {day}
                           </td>
-                          <td className="text-gray-300 text-sm py-2 text-right">
+                          <td className="text-ink-soft text-sm py-2 text-right">
                             {hours
                               ? `${hours.open} - ${hours.close}`
                               : 'Closed'}
@@ -226,10 +226,10 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
           {/* Map placeholder with gold border glow */}
           <AnimatedSection direction="right">
             <motion.div
-              className="w-full h-full min-h-[400px] rounded-lg border border-dark-lighter bg-dark flex items-center justify-center relative overflow-hidden"
+              className="w-full h-full min-h-[400px] rounded-lg border border-dark-lighter bg-mist flex items-center justify-center relative overflow-hidden"
               whileHover={{
-                borderColor: 'rgba(201,169,110,0.4)',
-                boxShadow: '0 0 30px rgba(201,169,110,0.15), inset 0 0 30px rgba(201,169,110,0.05)',
+                borderColor: 'rgba(31, 100, 117,0.4)',
+                boxShadow: '0 0 30px rgba(31, 100, 117,0.15), inset 0 0 30px rgba(31, 100, 117,0.05)',
               }}
               transition={{ duration: 0.5 }}
             >
@@ -237,14 +237,14 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
               <div
                 className="absolute inset-0 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                  boxShadow: 'inset 0 0 40px rgba(201,169,110,0.1)',
+                  boxShadow: 'inset 0 0 40px rgba(31, 100, 117,0.1)',
                 }}
               />
 
               <div className="text-center">
                 <motion.div
                   className="w-16 h-16 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center"
-                  whileHover={{ scale: 1.1, backgroundColor: 'rgba(201,169,110,0.2)' }}
+                  whileHover={{ scale: 1.1, backgroundColor: 'rgba(31, 100, 117,0.2)' }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 >
                   <svg
@@ -264,7 +264,7 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                 <p className="text-gold/30 text-sm uppercase tracking-wider mb-2">
                   Map
                 </p>
-                <p className="text-gray-500 text-xs">
+                <p className="text-ink-soft text-xs">
                   1847 Newport Blvd, Suite 200
                   <br />
                   Costa Mesa, CA 92627

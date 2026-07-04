@@ -27,7 +27,7 @@ export default function AdminTopbar({ onMenuToggle }: AdminTopbarProps) {
           {/* Mobile menu button */}
           <button
             onClick={onMenuToggle}
-            className="lg:hidden text-gray-400 hover:text-white transition-colors duration-200"
+            className="lg:hidden text-ink-soft hover:text-ink transition-colors duration-200"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -35,14 +35,14 @@ export default function AdminTopbar({ onMenuToggle }: AdminTopbarProps) {
             </svg>
           </button>
 
-          <h2 className="text-lg font-heading text-white">{title}</h2>
+          <h2 className="text-lg font-heading text-ink">{title}</h2>
         </div>
 
         <a
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:flex items-center gap-2 text-sm text-gray-400 hover:text-gold transition-colors duration-200 font-body"
+          className="hidden sm:flex items-center gap-2 text-sm text-ink-soft hover:text-gold transition-colors duration-200 font-body"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />

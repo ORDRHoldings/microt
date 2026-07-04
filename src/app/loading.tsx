@@ -8,7 +8,7 @@ export default function Loading() {
             className="h-10 w-48 rounded bg-dark-lighter relative overflow-hidden"
             style={{
               backgroundImage:
-                "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.15) 50%, transparent 75%)",
+                "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.15) 50%, transparent 75%)",
               backgroundSize: "200% 100%",
               animation: "shimmer 2.5s ease-in-out infinite",
             }}
@@ -21,7 +21,7 @@ export default function Loading() {
             className="h-8 w-3/4 mx-auto rounded bg-dark-lighter relative overflow-hidden"
             style={{
               backgroundImage:
-                "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.15) 50%, transparent 75%)",
+                "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.15) 50%, transparent 75%)",
               backgroundSize: "200% 100%",
               animation: "shimmer 2.5s ease-in-out infinite",
               animationDelay: "0.1s",
@@ -31,7 +31,7 @@ export default function Loading() {
             className="h-4 w-1/2 mx-auto rounded bg-dark-lighter relative overflow-hidden"
             style={{
               backgroundImage:
-                "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.15) 50%, transparent 75%)",
+                "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.15) 50%, transparent 75%)",
               backgroundSize: "200% 100%",
               animation: "shimmer 2.5s ease-in-out infinite",
               animationDelay: "0.2s",
@@ -48,7 +48,7 @@ export default function Loading() {
               style={{
                 width: `${width}%`,
                 backgroundImage:
-                  "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.12) 50%, transparent 75%)",
+                  "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.12) 50%, transparent 75%)",
                 backgroundSize: "200% 100%",
                 animation: "shimmer 2.5s ease-in-out infinite, pulse 2s ease-in-out infinite",
                 animationDelay: `${0.3 + i * 0.15}s`,
@@ -65,7 +65,7 @@ export default function Loading() {
               className="h-40 rounded-lg bg-dark-lighter relative overflow-hidden"
               style={{
                 backgroundImage:
-                  "linear-gradient(110deg, transparent 25%, rgba(201,169,110,0.12) 50%, transparent 75%)",
+                  "linear-gradient(110deg, transparent 25%, rgba(31, 100, 117,0.12) 50%, transparent 75%)",
                 backgroundSize: "200% 100%",
                 animation: "shimmer 2.5s ease-in-out infinite",
                 animationDelay: `${0.6 + i * 0.2}s`,

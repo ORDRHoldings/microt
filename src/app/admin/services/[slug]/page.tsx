@@ -135,7 +135,7 @@ export default function AdminServiceEditPage() {
           <button
             type="button"
             onClick={() => router.push("/admin/services")}
-            className="text-gray-400 hover:text-white text-sm mb-2 flex items-center gap-1 transition-colors"
+            className="text-ink-soft hover:text-ink text-sm mb-2 flex items-center gap-1 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -143,7 +143,7 @@ export default function AdminServiceEditPage() {
             Services
           </button>
           <div className="flex items-center gap-3">
-            <h1 className="font-heading text-3xl text-white">{form.name}</h1>
+            <h1 className="font-heading text-3xl text-ink">{form.name}</h1>
             {isDirty && (
               <span className="text-xs text-amber-400 bg-amber-400/10 px-2 py-1 rounded">
                 Unsaved
@@ -156,7 +156,7 @@ export default function AdminServiceEditPage() {
             href={`/services/${slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gold transition-colors"
+            className="flex items-center gap-1.5 text-sm text-ink-soft hover:text-gold transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
@@ -179,7 +179,7 @@ export default function AdminServiceEditPage() {
       <div className="space-y-6">
         {/* Basic Info */}
         <Card>
-          <h2 className="font-heading text-xl text-white mb-4">Basic Info</h2>
+          <h2 className="font-heading text-xl text-ink mb-4">Basic Info</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Field label="Name">
               <input
@@ -235,7 +235,7 @@ export default function AdminServiceEditPage() {
 
         {/* Image */}
         <Card>
-          <h2 className="font-heading text-xl text-white mb-4">Service Image</h2>
+          <h2 className="font-heading text-xl text-ink mb-4">Service Image</h2>
           <div className="flex items-start gap-6">
             {form.image && (
               // eslint-disable-next-line @next/next/no-img-element
@@ -250,7 +250,7 @@ export default function AdminServiceEditPage() {
               />
             )}
             <div className="flex-1">
-              <p className="text-gray-400 text-sm mb-3">
+              <p className="text-ink-soft text-sm mb-3">
                 Upload a new image to replace the current one.
               </p>
               <input
@@ -258,7 +258,7 @@ export default function AdminServiceEditPage() {
                 type="file"
                 accept="image/jpeg,image/png,image/webp,image/avif"
                 onChange={handleImageUpload}
-                className="block text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-gold/10 file:text-gold file:text-xs file:font-medium hover:file:bg-gold/20 file:cursor-pointer"
+                className="block text-sm text-ink-soft file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-gold/10 file:text-gold file:text-xs file:font-medium hover:file:bg-gold/20 file:cursor-pointer"
               />
               {uploading && (
                 <div className="text-gold text-xs mt-2 flex items-center gap-2">
@@ -271,7 +271,7 @@ export default function AdminServiceEditPage() {
 
         {/* Process Steps */}
         <Card>
-          <h2 className="font-heading text-xl text-white mb-4">Process Steps</h2>
+          <h2 className="font-heading text-xl text-ink mb-4">Process Steps</h2>
           <ListEditor
             items={form.processSteps as Record<string, string>[]}
             fields={PROCESS_STEP_FIELDS}
@@ -283,7 +283,7 @@ export default function AdminServiceEditPage() {
 
         {/* Healing Timeline */}
         <Card>
-          <h2 className="font-heading text-xl text-white mb-4">Healing Timeline</h2>
+          <h2 className="font-heading text-xl text-ink mb-4">Healing Timeline</h2>
           <ListEditor
             items={form.healingTimeline as Record<string, string>[]}
             fields={HEALING_FIELDS}
@@ -295,7 +295,7 @@ export default function AdminServiceEditPage() {
 
         {/* FAQs */}
         <Card>
-          <h2 className="font-heading text-xl text-white mb-4">FAQs</h2>
+          <h2 className="font-heading text-xl text-ink mb-4">FAQs</h2>
           <ListEditor
             items={form.faqs as Record<string, string>[]}
             fields={FAQ_FIELDS}
@@ -336,11 +336,11 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label className="block text-sm text-gray-400 mb-1.5">{label}</label>
+      <label className="block text-sm text-ink-soft mb-1.5">{label}</label>
       {children}
     </div>
   );
 }
 
 const inputClass =
-  "w-full bg-dark border border-dark-lighter rounded px-3 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-gold/50 transition-colors";
+  "w-full bg-dark border border-dark-lighter rounded px-3 py-2.5 text-sm text-ink placeholder-ink-faint focus:outline-none focus:border-gold/50 transition-colors";

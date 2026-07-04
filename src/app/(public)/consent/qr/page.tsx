@@ -17,7 +17,7 @@ export default function ConsentQRPage() {
   return (
     <>
       {/* ── Screen view ── */}
-      <div className="min-h-screen bg-dark flex flex-col items-center justify-center py-12 px-4 print:hidden">
+      <div className="min-h-screen bg-mist flex flex-col items-center justify-center py-12 px-4 print:hidden">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,18 +31,18 @@ export default function ConsentQRPage() {
               className="h-2 w-full"
               style={{
                 background:
-                  "linear-gradient(90deg, #C9A96E, #D4AF37, #C9A96E)",
+                  "linear-gradient(90deg, #1F6475, #2F8296, #1F6475)",
               }}
             />
 
             <div className="px-8 pt-8 pb-6 text-center">
               {/* Studio name */}
-              <p className="text-dark font-heading text-xl font-bold tracking-wide mb-0.5">
+              <p className="text-ink font-heading text-xl font-bold tracking-wide mb-0.5">
                 Velvet Brow Studio
               </p>
               <p
                 className="text-xs uppercase tracking-[0.2em] mb-6 font-semibold"
-                style={{ color: "#C9A96E" }}
+                style={{ color: "#1F6475" }}
               >
                 Where Precision Meets Beauty
               </p>
@@ -62,12 +62,12 @@ export default function ConsentQRPage() {
               <p className="text-gray-900 font-semibold text-base mb-1">
                 Complete Your Consent Form
               </p>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">
+              <p className="text-ink-soft text-sm leading-relaxed mb-4">
                 Scan here to complete your consultation and consent form before
                 treatment.
               </p>
 
-              <p className="text-xs font-mono text-gray-400 break-all">{url}</p>
+              <p className="text-xs font-mono text-ink-soft break-all">{url}</p>
             </div>
 
             {/* Gold footer band */}
@@ -75,7 +75,7 @@ export default function ConsentQRPage() {
               className="h-1 w-full"
               style={{
                 background:
-                  "linear-gradient(90deg, #C9A96E, #D4AF37, #C9A96E)",
+                  "linear-gradient(90deg, #1F6475, #2F8296, #1F6475)",
               }}
             />
           </div>
@@ -84,7 +84,7 @@ export default function ConsentQRPage() {
           <div className="flex gap-3 mt-6">
             <button
               onClick={() => window.print()}
-              className="flex-1 py-3.5 bg-gold-gradient text-black rounded-lg text-sm font-bold uppercase tracking-widest hover:shadow-glow transition-shadow duration-300"
+              className="flex-1 py-3.5 bg-gold-gradient text-white rounded-lg text-sm font-bold uppercase tracking-widest hover:shadow-glow transition-shadow duration-300"
             >
               Print
             </button>
@@ -96,7 +96,7 @@ export default function ConsentQRPage() {
             </Link>
           </div>
 
-          <p className="text-center text-gray-600 text-xs mt-4">
+          <p className="text-center text-ink-soft text-xs mt-4">
             Print and display at the studio for walk-in clients.
           </p>
         </motion.div>
@@ -110,7 +110,7 @@ export default function ConsentQRPage() {
         <div
           style={{
             width: 340,
-            border: "2px solid #C9A96E",
+            border: "2px solid #1F6475",
             borderRadius: 16,
             overflow: "hidden",
             textAlign: "center",
@@ -119,7 +119,7 @@ export default function ConsentQRPage() {
           {/* Gold header */}
           <div
             style={{
-              background: "linear-gradient(90deg, #C9A96E, #D4AF37, #C9A96E)",
+              background: "linear-gradient(90deg, #1F6475, #2F8296, #1F6475)",
               height: 8,
             }}
           />
@@ -138,7 +138,7 @@ export default function ConsentQRPage() {
             <p
               style={{
                 fontSize: 10,
-                color: "#C9A96E",
+                color: "#1F6475",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 margin: "0 0 24px",
@@ -202,7 +202,7 @@ export default function ConsentQRPage() {
           {/* Gold footer */}
           <div
             style={{
-              background: "linear-gradient(90deg, #C9A96E, #D4AF37, #C9A96E)",
+              background: "linear-gradient(90deg, #1F6475, #2F8296, #1F6475)",
               height: 6,
             }}
           />
