@@ -140,17 +140,17 @@ export default function HeroSection() {
       >
         <div className="absolute inset-[-5%]">
           <Image
-            src="/images/custom/hero.png"
+            src="/images/custom/artist.jpg"
             alt="Luxury Beauty Studio"
             fill
-            className="object-cover object-top opacity-35"
+            className="object-cover object-top opacity-60"
             priority
           />
         </div>
       </motion.div>
 
       {/* Light wash so the image reads as a soft backdrop */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/85 to-white" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/75 to-white" />
 
       {/* Soft aqua glow accents */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(173,218,224,0.28)_0%,_rgba(255,255,255,0)_60%)]" />
