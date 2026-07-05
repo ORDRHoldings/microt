@@ -19,9 +19,9 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Velvet Brow Studio | Luxury Brow & Permanent Makeup",
+  title: "Velvet Brow by Tannaz | Luxury Brow & Permanent Makeup",
   description:
-    "Velvet Brow Studio offers luxury permanent makeup services in Costa Mesa, CA. Specializing in microblading, PhiBrows, combo brows, lip blush, and permanent eyeliner. Where precision meets beauty.",
+    "Velvet Brow by Tannaz offers luxury permanent makeup services in Costa Mesa, CA. Specializing in microblading, PhiBrows, combo brows, lip blush, and permanent eyeliner. Where precision meets beauty.",
   keywords: [
     "microblading",
     "permanent makeup",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     "permanent eyeliner",
     "combo brows",
     "luxury brows",
-    "Velvet Brow Studio",
+    "Velvet Brow by Tannaz",
   ],
   openGraph: {
-    title: "Velvet Brow Studio | Luxury Brow & Permanent Makeup",
+    title: "Velvet Brow by Tannaz | Luxury Brow & Permanent Makeup",
     description:
       "Luxury permanent makeup services in Costa Mesa, CA. Microblading, PhiBrows, combo brows, lip blush, and permanent eyeliner by expert artists.",
     url: "https://velvetbrow.com",
-    siteName: "Velvet Brow Studio",
+    siteName: "Velvet Brow by Tannaz",
     locale: "en_US",
     type: "website",
     images: [
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
         url: "/images/custom/hero.png",
         width: 1200,
         height: 630,
-        alt: "Velvet Brow Studio - Luxury Permanent Makeup",
+        alt: "Velvet Brow by Tannaz - Luxury Permanent Makeup",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Velvet Brow Studio | Luxury Brow & Permanent Makeup",
+    title: "Velvet Brow by Tannaz | Luxury Brow & Permanent Makeup",
     description:
       "Luxury permanent makeup services in Costa Mesa, CA. Where precision meets beauty.",
     images: ["/images/custom/hero.png"],

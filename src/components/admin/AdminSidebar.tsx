@@ -124,7 +124,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
     <div className="flex flex-col h-full">
       {/* Brand */}
       <div className="p-6 border-b border-dark-lighter">
-        <h1 className="font-heading text-xl text-gold">Velvet Brow Studio</h1>
+        <h1 className="font-heading text-xl text-gold">Velvet Brow by Tannaz</h1>
         <p className="text-ink-soft text-xs mt-1 font-body">Admin</p>
       </div>
 

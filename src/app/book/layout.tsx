@@ -12,7 +12,7 @@ export default function BookLayout({
           href="/"
           className="font-heading text-xl text-gold hover:text-gold-light transition-colors duration-300"
         >
-          Velvet Brow Studio
+          Velvet Brow by Tannaz
         </Link>
       </div>
       <main className="pt-20 pb-12">{children}</main>

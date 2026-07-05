@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
       <Card className="w-full max-w-md" padding="lg">
         <div className="text-center mb-8">
           <h1 className="font-heading text-3xl text-gold mb-2">
-            Velvet Brow Studio
+            Velvet Brow by Tannaz
           </h1>
           <p className="text-ink-soft text-sm font-body">Admin Panel</p>
         </div>

@@ -140,7 +140,7 @@ export default function ConfirmationPage() {
           Booking Confirmed!
         </h1>
         <p className="text-ink-soft mb-8">
-          Thank you for choosing Velvet Brow Studio. We look forward to seeing
+          Thank you for choosing Velvet Brow by Tannaz. We look forward to seeing
           you!
         </p>
       </motion.div>

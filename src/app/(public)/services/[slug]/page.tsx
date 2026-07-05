@@ -15,18 +15,18 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   if (!service) {
     return {
-      title: "Service Not Found | Velvet Brow Studio",
+      title: "Service Not Found | Velvet Brow by Tannaz",
     };
   }
 
   return {
-    title: `${service.name} | Velvet Brow Studio`,
+    title: `${service.name} | Velvet Brow by Tannaz`,
     description: service.shortDescription + " Premium permanent makeup services in Costa Mesa, CA. Book your appointment today.",
     openGraph: {
-      title: `${service.name} | Velvet Brow Studio`,
+      title: `${service.name} | Velvet Brow by Tannaz`,
       description: service.shortDescription,
       url: `https://velvetbrow.com/services/${service.slug}`,
-      siteName: "Velvet Brow Studio",
+      siteName: "Velvet Brow by Tannaz",
       locale: "en_US",
       type: "website",
       images: [
@@ -34,13 +34,13 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
           url: service.image,
           width: 1200,
           height: 630,
-          alt: `${service.name} at Velvet Brow Studio`,
+          alt: `${service.name} at Velvet Brow by Tannaz`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${service.name} | Velvet Brow Studio`,
+      title: `${service.name} | Velvet Brow by Tannaz`,
       description: service.shortDescription,
       images: [service.image],
     },

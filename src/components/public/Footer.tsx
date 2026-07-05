@@ -88,7 +88,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
           {/* Column 1: Brand */}
           <div>
             <h3 className="font-heading text-2xl font-bold text-shimmer mb-4 inline-block">
-              Velvet Brow Studio
+              Velvet Brow by Tannaz
             </h3>
             <p className="text-gold text-sm uppercase tracking-wider mb-4">
               {brand.tagline}
@@ -301,7 +301,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
 
           {/* Copyright */}
           <p className="text-ink-soft text-xs text-center">
-            &copy; 2026 Velvet Brow Studio. All rights reserved.
+            &copy; 2026 Velvet Brow by Tannaz. All rights reserved.
           </p>
         </div>
       </div>

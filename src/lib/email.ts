@@ -4,7 +4,7 @@ import { BRAND } from "@/lib/constants";
 // Sender address. Must be a Resend-verified domain/address to actually deliver.
 // Override via the EMAIL_FROM env var once a sender/domain is verified in Resend.
 const FROM =
-  process.env.EMAIL_FROM || "Velvet Brow Studio <noreply@velvetbrow.com>";
+  process.env.EMAIL_FROM || "Velvet Brow by Tannaz <noreply@velvetbrow.com>";
 
 // Send a booking notification email to the studio owner.
 // Fails silently if RESEND_API_KEY is not configured.
@@ -64,7 +64,7 @@ export async function sendBookingNotification(
             </div>
           </div>
           <div style="padding: 16px 32px; background: #f0f0f0; font-size: 11px; color: #999; text-align: center;">
-            Velvet Brow Studio &middot; Costa Mesa &middot; Santa Monica &middot; Upland
+            Velvet Brow by Tannaz &middot; Costa Mesa &middot; Santa Monica &middot; Upland
           </div>
         </div>
       `,
@@ -108,7 +108,7 @@ export async function sendClientConfirmation(
           </div>
           <div style="padding: 32px; background: #fafafa;">
             <p style="margin: 0 0 24px; font-size: 15px; color: #333;">
-              Thank you for booking with Velvet Brow Studio. We'll be in touch shortly to confirm your appointment.
+              Thank you for booking with Velvet Brow by Tannaz. We'll be in touch shortly to confirm your appointment.
             </p>
             <table style="width: 100%; border-collapse: collapse;">
               <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; width: 140px;">Service</td>
@@ -135,7 +135,7 @@ export async function sendClientConfirmation(
             </div>
           </div>
           <div style="padding: 16px 32px; background: #f0f0f0; font-size: 11px; color: #999; text-align: center;">
-            Velvet Brow Studio &middot; Costa Mesa &middot; Santa Monica &middot; Upland
+            Velvet Brow by Tannaz &middot; Costa Mesa &middot; Santa Monica &middot; Upland
           </div>
         </div>
       `,

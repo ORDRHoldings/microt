@@ -1,8 +1,8 @@
 export const BRAND = {
-  name: "Velvet Brow Studio",
+  name: "Velvet Brow by Tannaz",
   tagline: "Where Precision Meets Beauty",
   description:
-    "Velvet Brow Studio is a luxury permanent makeup studio in Costa Mesa, CA, specializing in microblading, ombre/powder brows, combo brows, lip blush, and eye liner. Our expert artists combine artistry with precision to enhance your natural beauty.",
+    "Velvet Brow by Tannaz is a luxury permanent makeup studio in Costa Mesa, CA, specializing in microblading, ombre/powder brows, combo brows, lip blush, and eye liner. Our expert artists combine artistry with precision to enhance your natural beauty.",
   location: "Costa Mesa, Santa Monica & Upland, CA",
   address: "Costa Mesa · Santa Monica · Upland, CA",
   phone: "(909) 996-5307",
@@ -52,9 +52,9 @@ export interface SiteContent {
   contactVersion?: number;
 }
 
-// Bump to force a one-time refresh of code-managed contact fields (phone/email)
+// Bump to force a one-time refresh of code-managed brand fields (name/contact)
 // into an already-seeded site-content blob. Other admin edits are preserved.
-export const CONTACT_VERSION = 2;
+export const CONTACT_VERSION = 3;
 
 const DEFAULT_SITE_CONTENT: SiteContent = {
   brand: {
@@ -85,6 +85,7 @@ export async function getSiteContent(): Promise<SiteContent> {
       contactVersion: CONTACT_VERSION,
       brand: {
         ...stored.brand,
+        name: BRAND.name,
         phone: BRAND.phone,
         email: BRAND.email,
         location: BRAND.location,

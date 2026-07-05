@@ -95,7 +95,7 @@ export default function Navbar({ socialLinks }: NavbarProps) {
                 </svg>
               </div>
               <span className="font-heading text-xl md:text-2xl font-bold bg-gold-gradient bg-clip-text text-transparent">
-                Velvet Brow Studio
+                Velvet Brow by Tannaz
               </span>
             </Link>
 

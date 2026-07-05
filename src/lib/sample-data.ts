@@ -114,7 +114,7 @@ export const sampleTestimonials = [
     name: 'Isabella Rossi',
     service: 'PhiBrows',
     quote:
-      'The PhiBrows experience at Velvet Brow Studio is truly unmatched. From the precise golden-ratio mapping to the final reveal, I felt completely at ease. My friends think I was simply born with perfect brows — and honestly, that is the highest compliment I could receive.',
+      'The PhiBrows experience at Velvet Brow by Tannaz is truly unmatched. From the precise golden-ratio mapping to the final reveal, I felt completely at ease. My friends think I was simply born with perfect brows — and honestly, that is the highest compliment I could receive.',
     rating: 5,
     location: 'Irvine, CA',
   },
@@ -150,7 +150,7 @@ export const sampleTestimonials = [
     name: 'Charlotte Dubois',
     service: 'Microblading',
     quote:
-      'I was nervous about microblading after a less-than-ideal experience elsewhere, but the team at Velvet Brow Studio put my mind completely at ease. They corrected the old work beautifully, and now my brows look fuller and more natural than they ever did. Worth every penny.',
+      'I was nervous about microblading after a less-than-ideal experience elsewhere, but the team at Velvet Brow by Tannaz put my mind completely at ease. They corrected the old work beautifully, and now my brows look fuller and more natural than they ever did. Worth every penny.',
     rating: 5,
     location: 'Dana Point, CA',
   },
@@ -168,7 +168,7 @@ export const sampleTestimonials = [
     name: 'Natalia Kovacs',
     service: 'Lip Blush',
     quote:
-      'I flew in from out of state specifically for Velvet Brow Studio after seeing their portfolio, and it was absolutely worth the trip. My lip blush healed to the most beautiful rosy mauve, and the shape correction made my lips look fuller and more symmetrical. A truly transformative experience.',
+      'I flew in from out of state specifically for Velvet Brow by Tannaz after seeing their portfolio, and it was absolutely worth the trip. My lip blush healed to the most beautiful rosy mauve, and the shape correction made my lips look fuller and more symmetrical. A truly transformative experience.',
     rating: 5,
     location: 'Scottsdale, AZ',
   },

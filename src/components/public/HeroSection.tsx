@@ -192,7 +192,7 @@ export default function HeroSection() {
             <AnimatedText text="Velvet Brow" />
           </span>
           <span className="block italic text-gold">
-            <AnimatedText text="Studio" />
+            <AnimatedText text="by Tannaz" />
           </span>
         </motion.h1>
 

@@ -60,7 +60,7 @@ function GoldSeparator() {
 const textLines = [
   'With over eight years of dedicated practice in the art of permanent makeup, our lead artist brings a refined eye for symmetry, an unwavering commitment to perfection, and a deep understanding of facial aesthetics to every appointment. Trained at the prestigious PhiAcademy in Los Angeles and mentored by internationally renowned masters, she has honed her craft to deliver results that consistently exceed expectations.',
   'Certified in advanced techniques including PhiBrows, microblading, ombre shading, lip blush, and permanent eyeliner, she holds multiple accreditations from the Society of Permanent Cosmetic Professionals (SPCP) and the American Academy of Micropigmentation (AAM). Her ongoing commitment to education means she stays at the forefront of emerging techniques, pigment technology, and safety protocols.',
-  'At Velvet Brow Studio, we believe that luxury lies in the details. Every consultation is deeply personalized, every stroke intentional, and every result a reflection of our dedication to enhancing your natural beauty \u2014 never masking it. Our studio uses only premium, hypoallergenic pigments and maintains the highest standards of hygiene and care, because your comfort and confidence are at the heart of everything we do.',
+  'At Velvet Brow by Tannaz, we believe that luxury lies in the details. Every consultation is deeply personalized, every stroke intentional, and every result a reflection of our dedication to enhancing your natural beauty \u2014 never masking it. Our studio uses only premium, hypoallergenic pigments and maintains the highest standards of hygiene and care, because your comfort and confidence are at the heart of everything we do.',
 ];
 
 export default function AboutSection() {
@@ -90,7 +90,7 @@ export default function AboutSection() {
               >
                 <img
                   src="/images/custom/artist.jpg"
-                  alt="Lead artist at Velvet Brow Studio"
+                  alt="Lead artist at Velvet Brow by Tannaz"
                   className="w-full h-full object-cover object-top"
                 />
                 {/* Subtle grounding gradient */}

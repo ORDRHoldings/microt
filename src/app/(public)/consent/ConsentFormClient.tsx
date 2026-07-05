@@ -206,7 +206,7 @@ interface FormData {
 }
 
 const INITIAL: FormData = {
-  salonName: "Velvet Brow Studio",
+  salonName: "Velvet Brow by Tannaz",
   clientName: "",
   phone: "",
   email: "",
@@ -815,7 +815,7 @@ export default function ConsentFormClient() {
                     value={data.salonName}
                     onChange={(e) => set("salonName", e.target.value)}
                     className={inputClass}
-                    placeholder="Velvet Brow Studio"
+                    placeholder="Velvet Brow by Tannaz"
                   />
                 </Field>
 

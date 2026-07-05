@@ -38,7 +38,7 @@ export default function ConsentQRPage() {
             <div className="px-8 pt-8 pb-6 text-center">
               {/* Studio name */}
               <p className="text-ink font-heading text-xl font-bold tracking-wide mb-0.5">
-                Velvet Brow Studio
+                Velvet Brow by Tannaz
               </p>
               <p
                 className="text-xs uppercase tracking-[0.2em] mb-6 font-semibold"
@@ -133,7 +133,7 @@ export default function ConsentQRPage() {
                 letterSpacing: "0.04em",
               }}
             >
-              Velvet Brow Studio
+              Velvet Brow by Tannaz
             </p>
             <p
               style={{
