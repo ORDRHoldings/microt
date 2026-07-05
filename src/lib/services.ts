@@ -4,7 +4,7 @@ import { readJsonFileOrNull, writeJsonFile, readJsonObject, writeJsonObject } fr
 // Bump this number whenever the seed data changes in a way that should overwrite
 // existing blob data (e.g. a price update). The migration runs once and then
 // the version is stored so it never runs again (admin changes after that are respected).
-const SEED_VERSION = 6;
+const SEED_VERSION = 7;
 
 export const services: Service[] = [
   {
@@ -302,100 +302,230 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "eye-liner",
-    name: "Eye Liner",
+    slug: "brow-lamination-tint",
+    name: "Brow Lamination & Tint",
     shortDescription:
-      "Effortlessly defined eyes with smudge-proof, wake-up-ready eyeliner.",
+      "Smooth, lifted, fuller-looking brows with a custom tint — no needles, no downtime.",
     description:
-      "Permanent eyeliner is a semi-permanent cosmetic tattoo applied along the lash line to create the appearance of perfectly applied eyeliner that never smudges, smears, or fades throughout the day. This treatment is one of the most transformative permanent makeup procedures, instantly making eyes appear larger, more defined, and more awake.\n\nAt Velvet Brow by Tannaz, we offer a range of permanent eyeliner styles to suit your preferences, from a subtle lash line enhancement that adds invisible fullness between the lashes to a thin classic line for everyday definition to a slightly thicker wing for a more dramatic look. Our artists work with you to choose the perfect style and thickness.\n\nPermanent eyeliner is perfect for anyone who wants to save time on their daily makeup routine, those with allergies to conventional eyeliner products, contact lens wearers who struggle with traditional liner, or anyone who wants smudge-proof definition around the clock.",
-    duration: "~1.5 hours",
-    priceRange: "$550",
-    touchUpPrice: "$150",
-    image: "/images/custom/permanent-eyeliner.png",
+      "Brow lamination is a semi-permanent styling treatment that relaxes and re-sets your natural brow hairs into a uniform, lifted shape. The result is fuller, fluffier, perfectly groomed brows that stay in place — think of it as a perm for your eyebrows.\n\nPaired with a custom tint, we add depth and definition by darkening the brow hairs (and any fine, light hairs) to frame your face beautifully. It is the perfect option if you want a bolder, brushed-up brow without any tattooing or commitment.\n\nAt Velvet Brow by Tannaz, every lamination begins with a shape consultation so the finished look suits your features and lifestyle. Results typically last 4 to 6 weeks.",
+    duration: "45–60 min",
+    priceRange: "$120",
+    image: "/images/custom/phibrows.png",
     processSteps: [
       {
-        title: "Style Consultation",
+        title: "Consultation & Shaping",
         description:
-          "We discuss your desired eyeliner style — lash enhancement, classic line, or soft wing. We consider your eye shape, lid space, and daily makeup preferences to recommend the most flattering approach.",
+          "We assess your natural brows and discuss the shape and fullness you want, then clean up and map the brow area.",
       },
       {
-        title: "Design & Preview",
+        title: "Lamination",
         description:
-          "Using a removable cosmetic pencil, we draw the eyeliner design on your lids so you can see and approve the look before any permanent work begins.",
+          "A gentle lifting solution softens the hairs, which are then brushed up and set into your desired shape.",
       },
       {
-        title: "Numbing Application",
+        title: "Tint & Finish",
         description:
-          "A specialized numbing cream formulated for the delicate eye area is applied and given adequate time to take effect. Your comfort and safety are our top priority.",
-      },
-      {
-        title: "Eyeliner Application",
-        description:
-          "Using a precise digital machine, pigment is carefully deposited along the lash line. The procedure is performed with meticulous attention to symmetry and detail.",
-      },
-      {
-        title: "Post-Care Guidance",
-        description:
-          "Detailed aftercare instructions are provided for the delicate eye area. A touch-up session is scheduled for 6–7 weeks later to perfect the line and ensure optimal pigment retention.",
+          "A custom tint adds depth and definition, followed by a nourishing treatment to keep the hairs healthy and conditioned.",
       },
     ],
     healingTimeline: [
       {
-        day: "Days 1–3",
+        day: "First 24 hours",
         description:
-          "Eyeliner will appear darker and thicker than the final result. Mild swelling of the eyelids is normal, especially on the first morning. Apply cold compresses and the provided aftercare gel.",
+          "Keep the brows dry and avoid steam, sweat, and makeup on the area so the new shape fully sets.",
       },
       {
-        day: "Days 4–7",
+        day: "After 24 hours",
         description:
-          "The treated area begins to flake and peel. The liner may appear spotty or uneven during this phase. Avoid rubbing your eyes and do not apply eye makeup to the area.",
+          "Resume your normal routine. Brush the brows into shape daily and apply a nourishing oil to keep them soft.",
       },
       {
-        day: "Days 7–14",
+        day: "4–6 weeks",
         description:
-          "Peeling is complete and the liner appears lighter than expected. The color is settling beneath the new skin layer and will gradually darken to its true shade.",
-      },
-      {
-        day: "Days 14–28",
-        description:
-          "The healed color emerges — a soft, defined line that enhances your lash line beautifully. The final result is typically about 30% softer than the freshly applied look.",
-      },
-      {
-        day: "Week 6–7",
-        description:
-          "Touch-up appointment to refine the line, adjust thickness if desired, and fill in any areas where pigment may not have retained evenly during initial healing.",
+          "The lamination gradually relaxes as your natural growth cycle refreshes. Rebook to maintain the lifted look.",
       },
     ],
     faqs: [
       {
-        question: "What is Semi-Permanent Eyeliner?",
+        question: "How long does brow lamination last?",
         answer:
-          "What's the point of having gorgeous eyes if nobody sees them? Semi-permanent eyeliner is best on someone who wears makeup frequently. This will give you a perfectly placed eyeliner and you will never have to waste your time doing it again.",
+          "Results typically last 4 to 6 weeks, depending on your natural hair growth and how you care for your brows at home.",
       },
       {
-        question: "Does permanent eyeliner hurt?",
+        question: "Is it safe for my brow hairs?",
         answer:
-          "The eye area is sensitive, but our numbing protocol is very effective. Most clients experience a mild tickling or vibrating sensation. Some areas may feel more sensitive than others, and we adjust our technique and numbing throughout the procedure for your comfort.",
+          "Yes. We use professional, gentle products and always finish with a conditioning treatment. We also perform a patch test if it is your first time.",
       },
       {
-        question: "How long does it last?",
+        question: "Can I combine it with a tint?",
         answer:
-          "Eyeliner and lash line enhancements last 1-3 years. It truly depends on your skin type (oily or dry) as well as your lifestyle. For example: if you are an active swimmer and have very oily skin, it will most likely last 1 year.",
+          "Absolutely — lamination and tint are the perfect pair. The tint adds definition and makes even fine, light hairs visible for a fuller look.",
+      },
+    ],
+  },
+  {
+    slug: "lash-lift-tint",
+    name: "Lash Lift & Tint",
+    shortDescription:
+      "Your own lashes, lifted and darkened for a wide-awake, mascara-free look.",
+    description:
+      "A lash lift is a semi-permanent treatment that curls your natural lashes from the base, creating the appearance of longer, fuller, beautifully lifted eyes — no extensions required. Add a tint to darken your lashes from root to tip, and you get an effortless, mascara-free look that lasts for weeks.\n\nIt is the ideal low-maintenance option for anyone who wants to wake up ready. Lash lift and tint is gentle on your natural lashes and works with your own length to open up the eyes.\n\nAt Velvet Brow by Tannaz, we customize the curl to suit your eye shape and lash length, so the result always looks natural and flattering. Results typically last 6 to 8 weeks.",
+    duration: "45–60 min",
+    priceRange: "$100",
+    image: "/images/custom/permanent-eyeliner.png",
+    processSteps: [
+      {
+        title: "Consultation",
+        description:
+          "We discuss your desired curl and assess your natural lashes and eye shape to choose the most flattering lift.",
       },
       {
-        question: "What does the healing process look like?",
-        answer:
-          "Your eyes will be a bit sore for a few hours after the procedure where you will just need to ice them. The color will need to heal for a few days before you see the final results. During that healing process, the color of your eyeliner will be slightly off. You then come in for a follow up appointment 4-6 weeks after the initial procedure.",
+        title: "Lift & Set",
+        description:
+          "Your lashes are gently lifted onto a silicone shield and set with a professional solution to create a natural, lasting curl.",
       },
       {
-        question: "Can I wear contact lenses during the procedure?",
-        answer:
-          "Contact lenses must be removed before the procedure and should not be worn for at least 24–48 hours after treatment to allow the area to heal. Please bring your glasses to your appointment.",
+        title: "Tint & Nourish",
+        description:
+          "A custom tint darkens the lashes from root to tip, finished with a nourishing serum to keep them healthy and conditioned.",
+      },
+    ],
+    healingTimeline: [
+      {
+        day: "First 24 hours",
+        description:
+          "Keep lashes dry and avoid steam, sweat, and eye makeup so the curl fully sets. Do not rub your eyes.",
       },
       {
-        question: "What styles of permanent eyeliner do you offer?",
+        day: "After 24 hours",
+        description:
+          "Return to your normal routine. Brush lashes gently and apply a lash serum to keep them nourished.",
+      },
+      {
+        day: "6–8 weeks",
+        description:
+          "The lift relaxes as your lashes naturally shed and regrow. Rebook to maintain the curl and tint.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How long does a lash lift last?",
         answer:
-          "We offer lash line enhancement (invisible fullness between lashes), classic thin line (subtle everyday definition), classic medium line (a more visible liner look), and soft wing style. During your consultation, we help you choose the style that best complements your eye shape and lifestyle.",
+          "A lash lift and tint typically lasts 6 to 8 weeks, following your natural lash growth cycle.",
+      },
+      {
+        question: "Will it damage my natural lashes?",
+        answer:
+          "No — when performed correctly with professional products, a lash lift is gentle and does not damage your lashes. We finish with a conditioning treatment.",
+      },
+      {
+        question: "Can I wear mascara afterwards?",
+        answer:
+          "Yes, though most clients find they no longer need it. Wait 24 hours before applying mascara, and use an oil-free formula.",
+      },
+    ],
+  },
+  {
+    slug: "threading",
+    name: "Threading",
+    shortDescription:
+      "Precise, gentle hair removal that shapes your brows with crisp, clean definition.",
+    description:
+      "Threading is an all-natural hair removal technique that uses a twisted cotton thread to lift hair directly from the follicle. It offers incredible precision, making it the gold standard for shaping brows and removing fine facial hair with clean, defined lines.\n\nBecause it uses no chemicals or hot wax, threading is gentle and ideal for sensitive skin. It removes even the finest hairs for a crisp, polished finish.\n\nAt Velvet Brow by Tannaz, we map your brows to your unique features first, so every thread enhances your natural shape.",
+    duration: "15 min",
+    priceRange: "$20",
+    image: "/images/custom/microblading.png",
+    processSteps: [
+      {
+        title: "Brow Mapping",
+        description:
+          "We assess your natural shape and facial structure to design brows that flatter your features.",
+      },
+      {
+        title: "Threading",
+        description:
+          "Using a twisted cotton thread, unwanted hairs are removed with precision, following your mapped shape.",
+      },
+      {
+        title: "Soothe & Finish",
+        description:
+          "The area is soothed with a gentle, calming product to reduce any redness and leave the skin comfortable.",
+      },
+    ],
+    healingTimeline: [
+      {
+        day: "Right after",
+        description:
+          "Mild redness is normal and settles within an hour or two. Avoid touching the area and skip heavy makeup for the rest of the day.",
+      },
+      {
+        day: "First 24 hours",
+        description:
+          "Avoid sun exposure, saunas, and active skincare (retinol, exfoliants) to keep the freshly threaded skin calm.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Does threading hurt?",
+        answer:
+          "Most clients feel only a quick, mild sensation. Threading is fast and precise, and any redness fades within an hour or two.",
+      },
+      {
+        question: "How is threading better than waxing for brows?",
+        answer:
+          "Threading offers greater precision for shaping, removes even the finest hairs, and uses no hot wax or chemicals — making it especially good for sensitive skin.",
+      },
+    ],
+  },
+  {
+    slug: "waxing",
+    name: "Waxing",
+    shortDescription:
+      "Smooth, long-lasting hair removal for the face with premium, gentle wax.",
+    description:
+      "Waxing removes hair directly from the root for smooth, long-lasting results that last far longer than shaving. Over time, regular waxing can leave regrowth looking finer and sparser.\n\nWe use premium, skin-friendly wax and careful technique to keep the experience as comfortable as possible, leaving your skin smooth and refined.\n\nAt Velvet Brow by Tannaz, our facial waxing is quick, precise, and tailored to your skin — perfect on its own or added to any brow appointment.",
+    duration: "15–30 min",
+    priceRange: "From $15",
+    image: "/images/custom/combo-brows.png",
+    processSteps: [
+      {
+        title: "Consultation & Prep",
+        description:
+          "We discuss the areas you would like treated, then cleanse and prep the skin to ensure the best results.",
+      },
+      {
+        title: "Waxing",
+        description:
+          "Premium wax is applied and removed with a swift, careful technique to lift hair from the root while protecting the skin.",
+      },
+      {
+        title: "Soothe & Finish",
+        description:
+          "A calming, hydrating product is applied to soothe the skin and minimize any redness.",
+      },
+    ],
+    healingTimeline: [
+      {
+        day: "Right after",
+        description:
+          "Mild redness or sensitivity is normal and typically settles within a few hours. Avoid touching the treated area.",
+      },
+      {
+        day: "First 24–48 hours",
+        description:
+          "Avoid sun, heat, saunas, swimming, and active skincare to let the skin fully calm. Keep the area clean and moisturized.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How long does waxing last?",
+        answer:
+          "Results typically last 3 to 4 weeks, depending on your natural hair growth cycle. Regular waxing can make regrowth appear finer over time.",
+      },
+      {
+        question: "Which areas do you wax?",
+        answer:
+          "We offer facial waxing including brows, lip, chin, and sides. Let us know what you would like during your consultation.",
       },
     ],
   },
@@ -418,17 +548,19 @@ export async function getServices(): Promise<Service[]> {
   // If blob exists AND migration is current → return as-is (respect admin edits)
   if (stored !== null && (meta?.v ?? 0) >= SEED_VERSION) return stored;
 
-  // Either first-time seed (null) or migration needed (version behind)
-  const next = stored !== null
-    ? stored
-        .filter((s) => s.slug !== "combo-brows")
-        .map((s) => {
-          const seed = services.find((seed) => seed.slug === s.slug);
-          // Preserve custom blob image; update prices + FAQs from seed
-          const image = s.image?.startsWith("https") ? s.image : seed?.image ?? s.image;
-          return { ...s, image, priceRange: "$550", touchUpPrice: "$150", faqs: seed?.faqs ?? s.faqs };
-        })
-    : services;
+  // Migration: reconcile the stored list to the current seed — drop removed
+  // services, add new ones, refresh branded copy, and keep admin's price + image.
+  const storedBySlug = new Map((stored ?? []).map((s) => [s.slug, s]));
+  const next: Service[] = services.map((seed) => {
+    const prev = storedBySlug.get(seed.slug);
+    if (!prev) return seed;
+    return {
+      ...seed,
+      priceRange: prev.priceRange || seed.priceRange,
+      touchUpPrice: prev.touchUpPrice || seed.touchUpPrice,
+      image: prev.image || seed.image,
+    };
+  });
 
   await Promise.all([
     writeJsonFile("services.json", next),

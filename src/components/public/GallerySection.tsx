@@ -11,10 +11,9 @@ const categoryMap: Record<string, string> = {
   phibrows: 'Brows',
   'combo-brows': 'Brows',
   'lip-blush': 'Lips',
-  'permanent-eyeliner': 'Eyeliner',
 };
 
-const categories = ['All', 'Microblading', 'Brows', 'Lips', 'Eyeliner'] as const;
+const categories = ['All', 'Microblading', 'Brows', 'Lips'] as const;
 
 type Category = (typeof categories)[number];
 
