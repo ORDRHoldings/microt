@@ -1,4 +1,10 @@
 import type { Appointment } from "@/types";
+import { BRAND } from "@/lib/constants";
+
+// Sender address. Must be a Resend-verified domain/address to actually deliver.
+// Override via the EMAIL_FROM env var once a sender/domain is verified in Resend.
+const FROM =
+  process.env.EMAIL_FROM || "Velvet Brow Studio <noreply@velvetbrowstudio.com>";
 
 // Send a booking notification email to the studio owner.
 // Fails silently if RESEND_API_KEY is not configured.
@@ -6,8 +12,9 @@ export async function sendBookingNotification(
   appointment: Appointment
 ): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
-  const studioEmail = process.env.STUDIO_EMAIL;
-  if (!apiKey || !studioEmail) return;
+  // Route to STUDIO_EMAIL if set, otherwise fall back to the studio contact email.
+  const studioEmail = process.env.STUDIO_EMAIL || BRAND.email;
+  if (!apiKey) return;
 
   try {
     const { Resend } = await import("resend");
@@ -19,7 +26,7 @@ export async function sendBookingNotification(
     );
 
     await resend.emails.send({
-      from: "Velvet Brow Studio <noreply@velvetbrowstudio.com>",
+      from: FROM,
       to: studioEmail,
       subject: `New Booking: ${appointment.clientName} — ${appointment.serviceName}`,
       html: `
@@ -57,7 +64,7 @@ export async function sendBookingNotification(
             </div>
           </div>
           <div style="padding: 16px 32px; background: #f0f0f0; font-size: 11px; color: #999; text-align: center;">
-            Velvet Brow Studio · Costa Mesa, CA
+            Velvet Brow Studio &middot; Costa Mesa &middot; Santa Monica &middot; Upland
           </div>
         </div>
       `,
@@ -89,7 +96,7 @@ export async function sendClientConfirmation(
       process.env.NEXT_PUBLIC_SITE_URL || "https://velvetbrowstudio.com";
 
     await resend.emails.send({
-      from: "Velvet Brow Studio <noreply@velvetbrowstudio.com>",
+      from: FROM,
       to: appointment.clientEmail,
       subject: `Booking Request Received — ${appointment.serviceName}`,
       html: `
@@ -111,7 +118,7 @@ export async function sendClientConfirmation(
               <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666;">Time</td>
                   <td style="padding: 10px 0; border-bottom: 1px solid #eee;">${appointment.time}</td></tr>
               <tr><td style="padding: 10px 0; color: #666;">Location</td>
-                  <td style="padding: 10px 0;">Costa Mesa, CA</td></tr>
+                  <td style="padding: 10px 0;">Costa Mesa &middot; Santa Monica &middot; Upland</td></tr>
             </table>
             <div style="margin-top: 28px; padding: 20px; background: #f5f0e8; border-left: 3px solid #C9A96E;">
               <p style="margin: 0; font-size: 14px; color: #555;">
@@ -128,7 +135,7 @@ export async function sendClientConfirmation(
             </div>
           </div>
           <div style="padding: 16px 32px; background: #f0f0f0; font-size: 11px; color: #999; text-align: center;">
-            Velvet Brow Studio · Costa Mesa, CA
+            Velvet Brow Studio &middot; Costa Mesa &middot; Santa Monica &middot; Upland
           </div>
         </div>
       `,
