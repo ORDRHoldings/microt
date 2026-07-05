@@ -3,7 +3,7 @@ import { getSiteContent } from "@/lib/constants";
 export default async function JsonLdScript() {
   const { brand, businessHours } = await getSiteContent();
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://velvetbrowstudio.com";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://velvetbrow.com";
 
   const openingHoursSpec = Object.entries(businessHours)
     .filter(([, hours]) => hours !== null)

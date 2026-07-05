@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function ConsentQRPage() {
-  const [url, setUrl] = useState("https://velvetbrowstudio.com/consent");
+  const [url, setUrl] = useState("https://velvetbrow.com/consent");
 
   useEffect(() => {
     setUrl(`${window.location.origin}/consent`);

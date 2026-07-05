@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Velvet Brow Studio | Luxury Brow & Permanent Makeup",
     description:
       "Luxury permanent makeup services in Costa Mesa, CA. Microblading, PhiBrows, combo brows, lip blush, and permanent eyeliner by expert artists.",
-    url: "https://velvetbrowstudio.com",
+    url: "https://velvetbrow.com",
     siteName: "Velvet Brow Studio",
     locale: "en_US",
     type: "website",

@@ -10,7 +10,7 @@ import type { Appointment } from "@/types";
 import { format } from "date-fns";
 
 function ConsentQRCard() {
-  const [url, setUrl] = useState("https://velvetbrowstudio.com/consent");
+  const [url, setUrl] = useState("https://velvetbrow.com/consent");
   useEffect(() => {
     setUrl(`${window.location.origin}/consent`);
   }, []);

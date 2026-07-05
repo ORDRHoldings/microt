@@ -4,7 +4,7 @@ import { BRAND } from "@/lib/constants";
 // Sender address. Must be a Resend-verified domain/address to actually deliver.
 // Override via the EMAIL_FROM env var once a sender/domain is verified in Resend.
 const FROM =
-  process.env.EMAIL_FROM || "Velvet Brow Studio <noreply@velvetbrowstudio.com>";
+  process.env.EMAIL_FROM || "Velvet Brow Studio <noreply@velvetbrow.com>";
 
 // Send a booking notification email to the studio owner.
 // Fails silently if RESEND_API_KEY is not configured.
@@ -55,7 +55,7 @@ export async function sendBookingNotification(
                   <td style="padding: 10px 0;">${appointment.notes}</td></tr>` : ""}
             </table>
             <div style="margin-top: 28px; text-align: center;">
-              <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://velvetbrowstudio.com"}/admin/appointments"
+              <a href="${process.env.NEXT_PUBLIC_SITE_URL || "https://velvetbrow.com"}/admin/appointments"
                  style="display: inline-block; background: #C9A96E; color: #0A0A0A; padding: 12px 28px;
                         text-decoration: none; font-weight: bold; letter-spacing: 1px; font-size: 13px;
                         text-transform: uppercase;">
@@ -93,7 +93,7 @@ export async function sendClientConfirmation(
     );
 
     const siteUrl =
-      process.env.NEXT_PUBLIC_SITE_URL || "https://velvetbrowstudio.com";
+      process.env.NEXT_PUBLIC_SITE_URL || "https://velvetbrow.com";
 
     await resend.emails.send({
       from: FROM,

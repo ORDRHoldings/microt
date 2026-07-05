@@ -6,7 +6,7 @@ import AnimatedSection from "./AnimatedSection";
 
 export default function ConsentQRSection() {
   const [consentUrl, setConsentUrl] = useState(
-    "https://velvetbrowstudio.com/consent"
+    "https://velvetbrow.com/consent"
   );
 
   useEffect(() => {
