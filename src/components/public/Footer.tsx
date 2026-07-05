@@ -94,14 +94,13 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
               {brand.tagline}
             </p>
             <p className="text-ink-soft text-sm leading-relaxed mb-4">
-              Costa Mesa&apos;s premier luxury permanent makeup studio. We combine
+              Southern California&apos;s premier luxury permanent makeup studio. We combine
               artistry with precision to enhance your natural beauty, one stroke
               at a time. Specializing in microblading, ombre/powder brows, combo
               brows, lip blush, and eye liner.
             </p>
             <p className="text-ink-soft text-xs leading-relaxed">
-              Serving Costa Mesa, Newport Beach, Irvine, and surrounding Orange
-              County areas.
+              Serving Costa Mesa, Santa Monica, Upland, and surrounding areas.
             </p>
           </div>
 
@@ -222,9 +221,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
                   />
                 </svg>
                 <span className="text-ink-soft text-sm">
-                  1847 Newport Blvd, Suite 200
-                  <br />
-                  Costa Mesa, CA 92627
+                  Costa Mesa &middot; Santa Monica &middot; Upland
                 </span>
               </li>
             </ul>

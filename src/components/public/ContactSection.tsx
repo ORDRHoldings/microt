@@ -136,11 +136,9 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                   </svg>
                 </AnimatedIcon>
                 <div>
-                  <h4 className="text-ink font-semibold mb-1">Location</h4>
+                  <h4 className="text-ink font-semibold mb-1">Locations</h4>
                   <p className="text-ink-soft">
-                    1847 Newport Blvd, Suite 200
-                    <br />
-                    Costa Mesa, CA 92627
+                    Costa Mesa &middot; Santa Monica &middot; Upland
                   </p>
                 </div>
               </div>
@@ -265,9 +263,7 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                   Map
                 </p>
                 <p className="text-ink-soft text-xs">
-                  1847 Newport Blvd, Suite 200
-                  <br />
-                  Costa Mesa, CA 92627
+                  Costa Mesa &middot; Santa Monica &middot; Upland
                 </p>
               </div>
             </motion.div>

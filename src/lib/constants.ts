@@ -3,10 +3,10 @@ export const BRAND = {
   tagline: "Where Precision Meets Beauty",
   description:
     "Velvet Brow Studio is a luxury permanent makeup studio in Costa Mesa, CA, specializing in microblading, ombre/powder brows, combo brows, lip blush, and eye liner. Our expert artists combine artistry with precision to enhance your natural beauty.",
-  location: "Costa Mesa, CA",
-  address: "1847 Newport Blvd, Suite 200, Costa Mesa, CA 92627",
-  phone: "(949) 555-0173",
-  email: "hello@velvetbrowstudio.com",
+  location: "Costa Mesa, Santa Monica & Upland, CA",
+  address: "Costa Mesa · Santa Monica · Upland, CA",
+  phone: "(909) 996-5307",
+  email: "Velvetbrowbytannaz@gmail.com",
   instagram: "@velvetbrowstudio",
 } as const;
 
@@ -49,7 +49,12 @@ export interface SiteContent {
   };
   businessHours: Record<string, { open: string; close: string } | null>;
   socialLinks: { instagram: string; tiktok: string; facebook: string };
+  contactVersion?: number;
 }
+
+// Bump to force a one-time refresh of code-managed contact fields (phone/email)
+// into an already-seeded site-content blob. Other admin edits are preserved.
+export const CONTACT_VERSION = 2;
 
 const DEFAULT_SITE_CONTENT: SiteContent = {
   brand: {
@@ -64,13 +69,32 @@ const DEFAULT_SITE_CONTENT: SiteContent = {
   },
   businessHours: BUSINESS_HOURS,
   socialLinks: { ...SOCIAL_LINKS },
+  contactVersion: CONTACT_VERSION,
 };
 
 export async function getSiteContent(): Promise<SiteContent> {
   const stored = await readJsonObject<SiteContent>("site-content.json");
-  if (stored) return stored;
-  await writeJsonObject("site-content.json", DEFAULT_SITE_CONTENT);
-  return DEFAULT_SITE_CONTENT;
+  if (!stored) {
+    await writeJsonObject("site-content.json", DEFAULT_SITE_CONTENT);
+    return DEFAULT_SITE_CONTENT;
+  }
+  // One-time migration: refresh code-managed contact fields (phone/email) when behind.
+  if (stored.contactVersion !== CONTACT_VERSION) {
+    const migrated: SiteContent = {
+      ...stored,
+      contactVersion: CONTACT_VERSION,
+      brand: {
+        ...stored.brand,
+        phone: BRAND.phone,
+        email: BRAND.email,
+        location: BRAND.location,
+        address: BRAND.address,
+      },
+    };
+    await writeJsonObject("site-content.json", migrated);
+    return migrated;
+  }
+  return stored;
 }
 
 export async function getBrand(): Promise<SiteContent["brand"]> {
