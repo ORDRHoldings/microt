@@ -23,6 +23,9 @@ interface GalleryItem {
   category: Category;
   image: string;
   type: string;
+  /** Set together with afterImage to show a side-by-side comparison in the lightbox. */
+  beforeImage?: string;
+  afterImage?: string;
 }
 
 const stockImages = [
@@ -36,13 +39,29 @@ const stockImages = [
   'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fce?auto=format&fit=crop&q=80&w=600&h=600'
 ];
 
-const galleryItems: GalleryItem[] = sampleGalleryImages.map((img, index) => ({
-  id: img.id,
-  title: img.title,
-  category: (categoryMap[img.serviceSlug] || 'Microblading') as Category,
-  image: stockImages[index % stockImages.length],
-  type: img.type,
-}));
+// Real client work. These take precedence over the placeholder entries below.
+const realWork: GalleryItem[] = [
+  {
+    id: 'lip-blush-before-after-1',
+    title: 'Lip Blush: Before & After',
+    category: 'Lips',
+    image: '/images/gallery/lip-blush-after.webp',
+    type: 'before-after',
+    beforeImage: '/images/gallery/lip-blush-before.webp',
+    afterImage: '/images/gallery/lip-blush-after.webp',
+  },
+];
+
+const galleryItems: GalleryItem[] = [
+  ...realWork,
+  ...sampleGalleryImages.map((img, index) => ({
+    id: img.id,
+    title: img.title,
+    category: (categoryMap[img.serviceSlug] || 'Microblading') as Category,
+    image: stockImages[index % stockImages.length],
+    type: img.type,
+  })),
+];
 
 function GalleryCard({
   item,
@@ -195,14 +214,36 @@ export default function GallerySection() {
       >
         {selectedItem && (
           <div>
-            {/* Large image */}
-            <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-dark-light">
-              <img
-                src={selectedItem.image}
-                alt={selectedItem.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {/* Side-by-side comparison, or a single image when there is no pair */}
+            {selectedItem.beforeImage && selectedItem.afterImage ? (
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
+                {[
+                  { label: 'Before', src: selectedItem.beforeImage },
+                  { label: 'After', src: selectedItem.afterImage },
+                ].map(({ label, src }) => (
+                  <figure key={label} className="m-0">
+                    <div className="aspect-[9/16] rounded-lg overflow-hidden bg-dark-light">
+                      <img
+                        src={src}
+                        alt={`${selectedItem.title} — ${label.toLowerCase()}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-2 text-center text-xs font-semibold uppercase tracking-wider text-gold">
+                      {label}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            ) : (
+              <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-dark-light">
+                <img
+                  src={selectedItem.image}
+                  alt={selectedItem.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="font-heading text-xl text-ink mb-1">
