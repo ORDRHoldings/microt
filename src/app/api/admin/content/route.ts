@@ -23,6 +23,9 @@ export async function PUT(request: NextRequest) {
     // Merge with existing content so partial updates are safe
     const existing = await getSiteContent();
     const updated: SiteContent = {
+      // Keep migration version markers, or the next read re-runs them and
+      // overwrites what the admin just saved.
+      ...existing,
       brand: { ...existing.brand, ...body.brand },
       businessHours: body.businessHours ?? existing.businessHours,
       socialLinks: { ...existing.socialLinks, ...body.socialLinks },

@@ -72,7 +72,7 @@ export default function AdminContentPage() {
           ...prev,
           businessHours: {
             ...prev.businessHours,
-            [day]: value ? null : { open: "9:00 AM", close: "6:00 PM" },
+            [day]: value ? null : { open: "10:00 AM", close: "8:00 PM" },
           },
         };
       }
@@ -80,7 +80,7 @@ export default function AdminContentPage() {
         ...prev,
         businessHours: {
           ...prev.businessHours,
-          [day]: { open: current?.open ?? "9:00 AM", close: current?.close ?? "6:00 PM", [field]: value },
+          [day]: { open: current?.open ?? "10:00 AM", close: current?.close ?? "8:00 PM", [field]: value },
         },
       };
     });
@@ -288,7 +288,7 @@ export default function AdminContentPage() {
                         type="text"
                         value={hours?.open ?? ""}
                         onChange={(e) => setHours(day, "open", e.target.value)}
-                        placeholder="9:00 AM"
+                        placeholder="10:00 AM"
                         className={`${inputClass} w-28`}
                       />
                       <span className="text-ink-soft text-sm">to</span>
@@ -296,7 +296,7 @@ export default function AdminContentPage() {
                         type="text"
                         value={hours?.close ?? ""}
                         onChange={(e) => setHours(day, "close", e.target.value)}
-                        placeholder="6:00 PM"
+                        placeholder="8:00 PM"
                         className={`${inputClass} w-28`}
                       />
                     </div>

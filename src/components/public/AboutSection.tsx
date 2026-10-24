@@ -7,7 +7,6 @@ import AnimatedSection from './AnimatedSection';
 
 const stats = [
   { value: 1200, suffix: '+', label: 'Happy Clients' },
-  { value: 8, suffix: '+', label: 'Years Experience' },
   { value: 5, suffix: '-Star', label: 'Rated on Google' },
   { value: 100, suffix: '%', label: 'Premium Products Only' },
 ];
@@ -58,7 +57,7 @@ function GoldSeparator() {
 }
 
 const textLines = [
-  'With over eight years of dedicated practice in the art of permanent makeup, our lead artist brings a refined eye for symmetry, an unwavering commitment to perfection, and a deep understanding of facial aesthetics to every appointment. Trained at the prestigious PhiAcademy in Los Angeles and mentored by internationally renowned masters, she has honed her craft to deliver results that consistently exceed expectations.',
+  'Dedicated to the art of permanent makeup, our lead artist brings a refined eye for symmetry, an unwavering commitment to perfection, and a deep understanding of facial aesthetics to every appointment. Trained at the prestigious PhiAcademy in Los Angeles and mentored by internationally renowned masters, she has honed her craft to deliver results that consistently exceed expectations.',
   'Certified in advanced techniques including PhiBrows, microblading, ombre shading, lip blush, and permanent eyeliner, she remains committed to continuing education and staying current with emerging techniques, pigment technology, and safety protocols.',
   'At Velvet Brow by Tannaz, we believe that luxury lies in the details. Every consultation is deeply personalized, every stroke intentional, and every result a reflection of our dedication to enhancing your natural beauty \u2014 never masking it. Our studio uses only premium, hypoallergenic pigments and maintains the highest standards of hygiene and care, because your comfort and confidence are at the heart of everything we do.',
 ];
@@ -129,7 +128,7 @@ export default function AboutSection() {
 
         {/* Stats with count-up animation */}
         <AnimatedSection direction="up" delay={0.2}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-20 pt-12 border-t border-dark-lighter">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20 pt-12 border-t border-dark-lighter">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}

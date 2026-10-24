@@ -11,12 +11,12 @@ export const BRAND = {
 } as const;
 
 export const BUSINESS_HOURS: Record<string, { open: string; close: string } | null> = {
-  Monday: { open: "9:00 AM", close: "6:00 PM" },
-  Tuesday: { open: "9:00 AM", close: "6:00 PM" },
-  Wednesday: { open: "9:00 AM", close: "6:00 PM" },
-  Thursday: { open: "9:00 AM", close: "6:00 PM" },
-  Friday: { open: "9:00 AM", close: "6:00 PM" },
-  Saturday: { open: "9:00 AM", close: "6:00 PM" },
+  Monday: { open: "10:00 AM", close: "8:00 PM" },
+  Tuesday: { open: "10:00 AM", close: "8:00 PM" },
+  Wednesday: { open: "10:00 AM", close: "8:00 PM" },
+  Thursday: { open: "10:00 AM", close: "8:00 PM" },
+  Friday: { open: "10:00 AM", close: "8:00 PM" },
+  Saturday: { open: "10:00 AM", close: "8:00 PM" },
   Sunday: null,
 };
 
@@ -50,12 +50,18 @@ export interface SiteContent {
   businessHours: Record<string, { open: string; close: string } | null>;
   socialLinks: { instagram: string; tiktok: string; facebook: string };
   contactVersion?: number;
+  hoursVersion?: number;
 }
 
 // Bump to force a one-time refresh of code-managed brand fields (name, contact,
 // Instagram) into an already-seeded site-content blob. Other admin edits are
 // preserved.
 export const CONTACT_VERSION = 4;
+
+// Bump to force a one-time overwrite of businessHours with BUSINESS_HOURS.
+// Kept separate from CONTACT_VERSION so contact refreshes never clobber hours
+// edited in the admin panel.
+export const HOURS_VERSION = 1;
 
 const DEFAULT_SITE_CONTENT: SiteContent = {
   brand: {
@@ -71,6 +77,7 @@ const DEFAULT_SITE_CONTENT: SiteContent = {
   businessHours: BUSINESS_HOURS,
   socialLinks: { ...SOCIAL_LINKS },
   contactVersion: CONTACT_VERSION,
+  hoursVersion: HOURS_VERSION,
 };
 
 export async function getSiteContent(): Promise<SiteContent> {
@@ -79,13 +86,14 @@ export async function getSiteContent(): Promise<SiteContent> {
     await writeJsonObject("site-content.json", DEFAULT_SITE_CONTENT);
     return DEFAULT_SITE_CONTENT;
   }
+  let migrated = stored;
   // One-time migration: refresh code-managed contact fields (phone/email) when behind.
-  if (stored.contactVersion !== CONTACT_VERSION) {
-    const migrated: SiteContent = {
-      ...stored,
+  if (migrated.contactVersion !== CONTACT_VERSION) {
+    migrated = {
+      ...migrated,
       contactVersion: CONTACT_VERSION,
       brand: {
-        ...stored.brand,
+        ...migrated.brand,
         name: BRAND.name,
         phone: BRAND.phone,
         email: BRAND.email,
@@ -94,14 +102,23 @@ export async function getSiteContent(): Promise<SiteContent> {
         instagramHandle: BRAND.instagram,
       },
       socialLinks: {
-        ...stored.socialLinks,
+        ...migrated.socialLinks,
         instagram: SOCIAL_LINKS.instagram,
       },
     };
-    await writeJsonObject("site-content.json", migrated);
-    return migrated;
   }
-  return stored;
+  // One-time migration: replace business hours with the code defaults when behind.
+  if (migrated.hoursVersion !== HOURS_VERSION) {
+    migrated = {
+      ...migrated,
+      hoursVersion: HOURS_VERSION,
+      businessHours: { ...BUSINESS_HOURS },
+    };
+  }
+  if (migrated !== stored) {
+    await writeJsonObject("site-content.json", migrated);
+  }
+  return migrated;
 }
 
 export async function getBrand(): Promise<SiteContent["brand"]> {
@@ -119,7 +136,6 @@ export async function getSocialLinks(): Promise<SiteContent["socialLinks"]> {
 }
 
 export const BOOKING_TIMES = [
-  "9:00 AM",
   "10:00 AM",
   "11:00 AM",
   "12:00 PM",
@@ -128,4 +144,6 @@ export const BOOKING_TIMES = [
   "3:00 PM",
   "4:00 PM",
   "5:00 PM",
+  "6:00 PM",
+  "7:00 PM",
 ] as const;
