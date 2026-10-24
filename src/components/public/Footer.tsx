@@ -100,7 +100,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
               brows, lip blush, and eye liner.
             </p>
             <p className="text-ink-soft text-xs leading-relaxed">
-              Serving Costa Mesa, Santa Monica, Upland, and surrounding areas.
+              Serving Orange County, LA, Upland, and surrounding areas.
             </p>
           </div>
 
@@ -221,7 +221,7 @@ export default function Footer({ brand, socialLinks }: FooterProps) {
                   />
                 </svg>
                 <span className="text-ink-soft text-sm">
-                  Costa Mesa &middot; Santa Monica &middot; Upland
+                  Orange County &middot; LA &middot; Upland
                 </span>
               </li>
             </ul>

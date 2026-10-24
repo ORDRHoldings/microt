@@ -3,8 +3,8 @@ export const BRAND = {
   tagline: "Where Precision Meets Beauty",
   description:
     "Velvet Brow by Tannaz is a luxury permanent makeup studio in Costa Mesa, CA, specializing in microblading, ombre/powder brows, combo brows, lip blush, and eye liner. Our expert artists combine artistry with precision to enhance your natural beauty.",
-  location: "Costa Mesa, Santa Monica & Upland, CA",
-  address: "Costa Mesa · Santa Monica · Upland, CA",
+  location: "Orange County, LA & Upland, CA",
+  address: "Orange County · LA · Upland, CA",
   phone: "(909) 996-5307",
   email: "Velvetbrowbytannaz@gmail.com",
   instagram: "@velvet_brow_by_tannaz",
@@ -56,7 +56,7 @@ export interface SiteContent {
 // Bump to force a one-time refresh of code-managed brand fields (name, contact,
 // Instagram) into an already-seeded site-content blob. Other admin edits are
 // preserved.
-export const CONTACT_VERSION = 4;
+export const CONTACT_VERSION = 5;
 
 // Bump to force a one-time overwrite of businessHours with BUSINESS_HOURS.
 // Kept separate from CONTACT_VERSION so contact refreshes never clobber hours

@@ -106,7 +106,7 @@ export async function sendBookingNotification(
             </div>
           </div>
           <div style="padding: 16px 32px; background: #f0f0f0; font-size: 11px; color: #999; text-align: center;">
-            Velvet Brow by Tannaz &middot; Costa Mesa &middot; Santa Monica &middot; Upland
+            Velvet Brow by Tannaz &middot; Orange County &middot; LA &middot; Upland
           </div>
         </div>
       `,
@@ -158,7 +158,7 @@ export async function sendClientConfirmation(
               <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666;">Time</td>
                   <td style="padding: 10px 0; border-bottom: 1px solid #eee;">${appointment.time}</td></tr>
               <tr><td style="padding: 10px 0; color: #666;">Location</td>
-                  <td style="padding: 10px 0;">Costa Mesa &middot; Santa Monica &middot; Upland</td></tr>
+                  <td style="padding: 10px 0;">Orange County &middot; LA &middot; Upland</td></tr>
             </table>
             <div style="margin-top: 28px; padding: 20px; background: #f5f0e8; border-left: 3px solid #C9A96E;">
               <p style="margin: 0; font-size: 14px; color: #555;">
@@ -175,7 +175,7 @@ export async function sendClientConfirmation(
             </div>
           </div>
           <div style="padding: 16px 32px; background: #f0f0f0; font-size: 11px; color: #999; text-align: center;">
-            Velvet Brow by Tannaz &middot; Costa Mesa &middot; Santa Monica &middot; Upland
+            Velvet Brow by Tannaz &middot; Orange County &middot; LA &middot; Upland
           </div>
         </div>
       `,

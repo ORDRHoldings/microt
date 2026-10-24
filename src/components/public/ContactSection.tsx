@@ -138,7 +138,7 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                 <div>
                   <h4 className="text-ink font-semibold mb-1">Locations</h4>
                   <p className="text-ink-soft">
-                    Costa Mesa &middot; Santa Monica &middot; Upland
+                    Orange County &middot; LA &middot; Upland
                   </p>
                 </div>
               </div>
@@ -263,7 +263,7 @@ export default function ContactSection({ brand, businessHours }: ContactSectionP
                   Map
                 </p>
                 <p className="text-ink-soft text-xs">
-                  Costa Mesa &middot; Santa Monica &middot; Upland
+                  Orange County &middot; LA &middot; Upland
                 </p>
               </div>
             </motion.div>
