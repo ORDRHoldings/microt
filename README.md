@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Velvet Brow by Tannaz
+
+Website, online booking and admin CMS for Velvet Brow by Tannaz, a luxury brow and permanent makeup studio.
+
+- **Live:** https://velvetbrow.com (`www.velvetbrow.com` 308-redirects to the apex)
+- **Stack:** Next.js 14 App Router, Tailwind, Framer Motion, Vercel Blob as a JSON store
+- **Hosting:** Vercel project `velvetbrow`, auto-deploys on push to `master`
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev    # http://localhost:3000
+npm run build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy the environment variables listed in `CLAUDE.md` into `.env.local`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **Warning:** `.env.local` holds the production `BLOB_READ_WRITE_TOKEN`. A local
+> `npm run build` reads and migrates the **live** site content, so a bumped
+> migration version (`CONTACT_VERSION`, `HOURS_VERSION`, `SEED_VERSION`) goes
+> live the moment you build.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What's Where
 
-## Learn More
+| Area | Path |
+| --- | --- |
+| Public site (home, services, FAQ, consent) | `src/app/(public)/` |
+| Booking wizard | `src/app/book/` |
+| Admin panel (`/admin`, password-protected) | `src/app/admin/` |
+| API routes | `src/app/api/` |
+| Brand, hours, booking times | `src/lib/constants.ts` |
+| Blob data layer | `src/lib/data.ts` |
 
-To learn more about Next.js, take a look at the following resources:
+Most public content (services, testimonials, brand info, business hours) is editable in `/admin` without a redeploy.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Business Hours
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Monday–Saturday, 10:00 AM – 8:00 PM. Closed Sunday. Booking slots run 10:00 AM – 7:00 PM.
 
-## Deploy on Vercel
+The defaults live in `BUSINESS_HOURS` and `BOOKING_TIMES` in `src/lib/constants.ts`. Admin edits to hours persist; to force new code defaults onto the live site, bump `HOURS_VERSION`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Domain / DNS
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The domain is registered at GoDaddy and uses GoDaddy nameservers; no registrar forwarding.
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `216.150.1.1` |
+| A | `@` | `216.150.16.1` |
+| CNAME | `www` | `2cdd92ab9071e498.vercel-dns-016.com` |
+
+Both `velvetbrow.com` and `www.velvetbrow.com` are added in Vercel → Settings → Domains, which issues SSL automatically.
+
+See `CLAUDE.md` for full architecture notes and conventions.

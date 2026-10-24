@@ -98,3 +98,10 @@ Both `GMAIL_*` vars must be present or email is a silent no-op.
 - No `src/app/page.tsx` at root — the home page lives in `src/app/(public)/page.tsx` via the route group.
 - Blob `put` calls must include `allowOverwrite: true` to avoid "blob already exists" build errors.
 - All `fetch(blobUrl)` calls must include `cache: "no-store"` — Next.js caches fetch by default.
+- Domain `velvetbrow.com` (GoDaddy DNS, no forwarding): A `@` → `216.150.1.1` + `216.150.16.1`, CNAME `www` → `2cdd92ab9071e498.vercel-dns-016.com`. `www` 308-redirects to the apex.
+
+## Site-Content Migrations
+
+`getSiteContent()` in `src/lib/constants.ts` applies one-time, version-gated migrations to the stored blob: `CONTACT_VERSION` refreshes brand/contact fields, and `HOURS_VERSION` overwrites `businessHours` with `BUSINESS_HOURS`. Bump a version only to push new code defaults over admin edits. The admin content PUT spreads `...existing` so these markers survive saves.
+
+**CRITICAL:** `.env.local` holds the production blob token, so a local `npm run build` runs these migrations against **live** data.
