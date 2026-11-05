@@ -8,6 +8,8 @@ import ConsentQRSection from '@/components/public/ConsentQRSection';
 import ContactSection from '@/components/public/ContactSection';
 import InstagramSection from '@/components/public/InstagramSection';
 import { getSiteContent } from '@/lib/constants';
+import GoogleReviewsSection from '@/components/public/GoogleReviewsSection';
+import { getPublicGoogleReviews } from '@/lib/google-reviews';
 import { getTestimonials } from '@/lib/testimonials';
 import { getServices } from '@/lib/services';
 import { readJsonFile } from '@/lib/data';
@@ -21,11 +23,13 @@ export default async function HomePage() {
     testimonials,
     services,
     instagramPosts,
+    googleReviews,
   ] = await Promise.all([
     getSiteContent(),
     getTestimonials(),
     getServices(),
     readJsonFile<InstagramPost>('instagram.json'),
+    getPublicGoogleReviews(),
   ]);
 
   return (
@@ -35,6 +39,7 @@ export default async function HomePage() {
       <ServicesSection services={services} />
       <GallerySection />
       <TestimonialsSection testimonials={testimonials} />
+      {googleReviews && <GoogleReviewsSection data={googleReviews} />}
       <BookingCTASection />
       <ConsentQRSection />
       <ContactSection brand={brand} businessHours={businessHours} />

@@ -87,7 +87,15 @@ GMAIL_APP_PASSWORD      # Optional. Google App Password (needs 2-Step Verificati
                         #   on that account; not the account password)
 STUDIO_EMAIL            # Optional. Extra notification recipient — added to the
                         #   hardcoded studio address, does not replace it
+GOOGLE_PLACES_API_KEY   # Optional. Places API (New) key; without it the Google
+                        #   reviews section silently doesn't render
+GOOGLE_PLACE_ID         # Optional. Skips the name search (default query
+                        #   "Velvet Brow by Tannaz Upland CA", or GOOGLE_PLACE_QUERY)
 ```
+
+## Google Reviews
+
+`src/lib/google-reviews.ts` fetches rating + up to 5 reviews live from the Places API (New), cached 24h via `next: { revalidate }` (deliberately NOT `no-store`; this is Google, not Blob). Review text is never stored — Google's terms restrict it. Only settings (`enabled`, `minRating`, `hiddenIds`) persist, in `data/google-reviews-settings.json`. Admin at `/admin/google-reviews` (hide toggles, min stars). Rendered by `GoogleReviewsSection` right after the testimonials carousel, with Google attribution + links.
 
 Both `GMAIL_*` vars must be present or email is a silent no-op.
 
