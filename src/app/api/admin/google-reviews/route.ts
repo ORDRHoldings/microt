@@ -8,12 +8,18 @@ import {
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const [settings, data] = await Promise.all([getReviewSettings(), fetchGoogleReviews()]);
-  return NextResponse.json({
-    configured: Boolean(process.env.GOOGLE_PLACES_API_KEY),
-    settings,
-    data,
-  });
+  try {
+    const [settings, data] = await Promise.all([getReviewSettings(), fetchGoogleReviews()]);
+    return NextResponse.json({
+      configured: Boolean(process.env.GOOGLE_PLACES_API_KEY),
+      settings,
+      data,
+    });
+  } catch (error) {
+    // Never return defaults on a failed read: the UI could save them over real settings.
+    console.error("Error reading review settings:", error);
+    return NextResponse.json({ error: "Failed to read settings" }, { status: 500 });
+  }
 }
 
 export async function PUT(request: NextRequest) {

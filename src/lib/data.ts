@@ -109,3 +109,17 @@ export async function writeJsonObject<T>(
     allowOverwrite: true,
   });
 }
+
+// Like readJsonObject, but distinguishes "file absent" (returns null) from a
+// failed read (throws). Use where falling back to defaults on error would be unsafe.
+export async function readJsonObjectStrict<T>(filename: string): Promise<T | null> {
+  const { blobs } = await list({ prefix: `data/${filename}` });
+  if (blobs.length === 0) return null;
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  const response = await fetch(blobs[0].url, {
+    headers: token ? { authorization: `Bearer ${token}` } : {},
+    cache: "no-store",
+  });
+  if (!response.ok) throw new Error(`Failed to read ${filename}: ${response.status}`);
+  return (await response.json()) as T;
+}

@@ -1,4 +1,4 @@
-import { readJsonObject, writeJsonObject } from "@/lib/data";
+import { readJsonObjectStrict, writeJsonObject } from "@/lib/data";
 
 /**
  * Google reviews via the Places API (New).
@@ -44,8 +44,9 @@ export interface GoogleReviewsData {
   reviews: GoogleReview[]; // unfiltered, as returned by Google
 }
 
+/** Defaults only when the file is absent; THROWS if the read fails (fail closed). */
 export async function getReviewSettings(): Promise<GoogleReviewSettings> {
-  const stored = await readJsonObject<Partial<GoogleReviewSettings>>(SETTINGS_FILE);
+  const stored = await readJsonObjectStrict<Partial<GoogleReviewSettings>>(SETTINGS_FILE);
   return { ...DEFAULT_REVIEW_SETTINGS, ...(stored ?? {}) };
 }
 
@@ -116,7 +117,15 @@ export async function fetchGoogleReviews(): Promise<GoogleReviewsData | null> {
 
 /** Reviews ready for the public site: settings applied, empty text dropped. */
 export async function getPublicGoogleReviews(): Promise<GoogleReviewsData | null> {
-  const [settings, data] = await Promise.all([getReviewSettings(), fetchGoogleReviews()]);
+  let settings: GoogleReviewSettings;
+  try {
+    settings = await getReviewSettings();
+  } catch (e) {
+    // Can't tell what the admin hid — render nothing rather than risk showing it.
+    console.error("Google review settings unreadable; hiding section:", e);
+    return null;
+  }
+  const data = await fetchGoogleReviews();
   if (!data || !settings.enabled) return null;
   return {
     ...data,

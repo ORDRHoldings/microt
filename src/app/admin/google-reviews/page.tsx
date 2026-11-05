@@ -15,10 +15,13 @@ export default function AdminGoogleReviewsPage() {
   const [payload, setPayload] = useState<Payload | null>(null);
   const [saving, setSaving] = useState(false);
 
+  const [failed, setFailed] = useState(false);
+
   useEffect(() => {
     fetch("/api/admin/google-reviews")
-      .then((r) => r.json())
-      .then(setPayload);
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then(setPayload)
+      .catch(() => setFailed(true));
   }, []);
 
   async function save(patch: Partial<GoogleReviewSettings>) {
@@ -35,6 +38,10 @@ export default function AdminGoogleReviewsPage() {
     } finally {
       setSaving(false);
     }
+  }
+
+  if (failed) {
+    return <p className="text-ink text-sm">Could not load settings. Refresh to try again.</p>;
   }
 
   if (!payload) {
