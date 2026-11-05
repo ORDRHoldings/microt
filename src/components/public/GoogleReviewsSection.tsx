@@ -23,7 +23,8 @@ function Stars({ rating }: { rating: number }) {
 }
 
 export default function GoogleReviewsSection({ data }: { data: GoogleReviewsData }) {
-  if (data.reviews.length === 0) return null;
+  // Google sometimes returns the rating but no review entries: show just the badge then.
+  if (data.reviews.length === 0 && !data.rating) return null;
 
   return (
     <section id="google-reviews" className="py-24 md:py-28 bg-mist">
@@ -45,6 +46,7 @@ export default function GoogleReviewsSection({ data }: { data: GoogleReviewsData
           </a>
         </div>
 
+        {data.reviews.length > 0 && (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {data.reviews.map((r, i) => (
             <motion.figure
@@ -77,6 +79,7 @@ export default function GoogleReviewsSection({ data }: { data: GoogleReviewsData
             </motion.figure>
           ))}
         </div>
+        )}
 
         <div className="mt-10 flex flex-col items-center gap-3 text-center">
           <div className="flex flex-wrap justify-center gap-4 text-sm">
