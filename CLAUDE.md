@@ -97,6 +97,10 @@ GOOGLE_PLACE_ID         # Optional. Skips the name search (default query
 
 `src/lib/google-reviews.ts` fetches rating + up to 5 reviews live from the Places API (New), cached 24h via `next: { revalidate }` (deliberately NOT `no-store`; this is Google, not Blob). Review text is never stored — Google's terms restrict it. Only settings (`enabled`, `minRating`, `hiddenIds`) persist, in `data/google-reviews-settings.json`. Admin at `/admin/google-reviews` (hide toggles, min stars). Rendered by `GoogleReviewsSection` right after the testimonials carousel, with Google attribution + links.
 
+When Google returns a rating but no review entries, the section renders badge-only (rating, review count, links) and no cards; it returns null only when there is neither.
+
+**Status (2026-11-05):** live but badge-only. Google is hiding this listing's review text on its own pages (the Search review dialog says "No reviews found", Maps shows only the summary), so the API has nothing to return. This is not a code bug — the owner must resolve it via Google Business Profile support; cards should appear without a code change once Google restores them (24h cache). Never invent review text or relabel reviews from other platforms as Google reviews.
+
 Both `GMAIL_*` vars must be present or email is a silent no-op.
 
 ## Vercel Deployment Notes

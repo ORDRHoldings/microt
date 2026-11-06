@@ -35,6 +35,12 @@ Copy the environment variables listed in `CLAUDE.md` into `.env.local`.
 
 Most public content (services, testimonials, brand info, business hours) is editable in `/admin` without a redeploy.
 
+## Google Reviews
+
+The home page shows the studio's Google rating and reviews (Places API (New)) right after the testimonials carousel. Code is in `src/lib/google-reviews.ts` and `src/components/public/GoogleReviewsSection.tsx`; the admin controls (on/off, minimum stars, hide individual reviews) are at `/admin/google-reviews`. It needs `GOOGLE_PLACES_API_KEY` in Vercel; without it the section does not render.
+
+**Current status (2026-11-05):** the section shows the 5.0 rating and the 27-review count only. Google is not displaying this listing's individual reviews on its own pages, so there is no review text to show. The business owner needs to raise this with Google Business Profile support; review cards should appear with no code change once Google restores them.
+
 ## Business Hours
 
 Monday–Saturday, 10:00 AM – 8:00 PM. Closed Sunday. Booking slots run 10:00 AM – 7:00 PM.
