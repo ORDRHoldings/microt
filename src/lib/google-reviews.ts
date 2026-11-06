@@ -91,6 +91,13 @@ export async function fetchGoogleReviews(): Promise<GoogleReviewsData | null> {
       return null;
     }
     const p = await res.json();
+    // Diagnostic: response shape only (no key, no review text).
+    console.log("[google-reviews]", JSON.stringify({
+      status: res.status,
+      fields: Object.keys(p),
+      reviewCount: Array.isArray(p.reviews) ? p.reviews.length : 0,
+      userRatingCount: p.userRatingCount ?? null,
+    }));
     return {
       placeName: p.displayName?.text ?? "",
       rating: p.rating ?? 0,
